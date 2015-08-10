@@ -34,6 +34,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Library\Aspose.Cells.dll</HintPath>
     </Reference>
+    <Reference Include="Campus.Windows, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Campus.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Library\DevComponents.DotNetBar2.dll</HintPath>
@@ -78,6 +82,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Library\Framework.dll</HintPath>
     </Reference>
+    <Reference Include="IntelliSchool.DSA.ClientFramework, Version=1.2.2.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\IntelliSchool.DSA.ClientFramework.dll</HintPath>
+    </Reference>
     <Reference Include="K12.Data, Version=2.0.0.8, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Library\K12.Data.dll</HintPath>
@@ -85,6 +93,22 @@
     <Reference Include="K12.Presentation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Library\K12.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartSchool.API.PlugIn, Version=0.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\SmartSchool.API.PlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartSchool.Common, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\SmartSchool.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartSchool.Common.DotNetBar, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\SmartSchool.Common.DotNetBar.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartSchool.Customization.PlugIn, Version=1.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\SmartSchool.Customization.PlugIn.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -98,13 +122,162 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class.cs" />
-    <Compile Include="ClassExtendControls\Ribbon\Resource1.Designer.cs">
+    <Compile Include="ClassExtendControls\Ribbon\ClassImportWizardControls\ImportDataAccess.cs" />
+    <Compile Include="ClassExtendControls\Ribbon\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resource1.resx</DependentUpon>
+      <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="ClassExtendControls\Ribbon\TaggingMenu.cs" />
     <Compile Include="ClassRecord.cs" />
+    <Compile Include="ClassTag.cs" />
+    <Compile Include="ClassTagRecord.cs" />
+    <Compile Include="Course.cs" />
+    <Compile Include="CourseRecord.cs" />
+    <Compile Include="CourseTag.cs" />
+    <Compile Include="CourseTagRecord.cs" />
+    <Compile Include="Editor\ClassRecordEditor.cs" />
+    <Compile Include="Editor\ClassTagRecordEditor.cs" />
+    <Compile Include="Editor\CourseRecordEditor.cs" />
+    <Compile Include="Editor\CourseTagRecordEditor.cs" />
+    <Compile Include="Editor\EditorStatus.cs" />
+    <Compile Include="Editor\GeneralTagRecordEditor.cs" />
+    <Compile Include="Editor\StudentRecordEditor.cs" />
+    <Compile Include="Editor\StudentTagRecordEditor.cs" />
+    <Compile Include="Editor\TagRecordEditor.cs" />
+    <Compile Include="Editor\TeacherRecordEditor.cs" />
+    <Compile Include="Editor\TeacherTagRecordEditor.cs" />
+    <Compile Include="Feature\EditClass.cs" />
+    <Compile Include="Feature\EditCourse.cs" />
+    <Compile Include="Feature\EditStudent.cs" />
+    <Compile Include="Feature\EditTag.cs" />
+    <Compile Include="Feature\EditTeacher.cs" />
+    <Compile Include="Feature\Legacy\Class.cs" />
+    <Compile Include="Feature\Legacy\ClassBulkProcess.cs" />
+    <Compile Include="Feature\Legacy\Config.cs" />
+    <Compile Include="Feature\Legacy\CourseBulkProcess.cs" />
+    <Compile Include="Feature\Legacy\EditClass.cs" />
+    <Compile Include="Feature\Legacy\EditCourse.cs" />
+    <Compile Include="Feature\Legacy\EditStudent.cs" />
+    <Compile Include="Feature\Legacy\EditTeacher.cs" />
+    <Compile Include="Feature\Legacy\QueryClass.cs" />
+    <Compile Include="Feature\Legacy\QueryStudent.cs" />
+    <Compile Include="Feature\Legacy\QueryTeacher.cs" />
+    <Compile Include="Feature\Legacy\StudentBulkProcess.cs" />
+    <Compile Include="Feature\Legacy\TeacherBulkProcess.cs" />
+    <Compile Include="Feature\QueryClass.cs" />
+    <Compile Include="Feature\QueryCourse.cs" />
+    <Compile Include="Feature\QueryStudent.cs" />
+    <Compile Include="Feature\QueryTeacher.cs" />
+    <Compile Include="GeneralTag.cs" />
+    <Compile Include="GeneralTagRecord.cs" />
+    <Compile Include="InternalExtendControls\Tagging\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="InternalExtendControls\Tagging\TagColor.cs" />
+    <Compile Include="InternalExtendControls\Tagging\TagEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InternalExtendControls\Tagging\TagEditor.Designer.cs">
+      <DependentUpon>TagEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InternalExtendControls\Tagging\TagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InternalExtendControls\Tagging\TagForm.Designer.cs">
+      <DependentUpon>TagForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LegacyPresentBase.cs" />
+    <Compile Include="Legacy\Export\RequestHandler\Field.cs" />
+    <Compile Include="Legacy\Export\RequestHandler\FieldCollection.cs" />
+    <Compile Include="Legacy\Export\RequestHandler\Formater\BaseFieldFormater.cs" />
+    <Compile Include="Legacy\Export\RequestHandler\Formater\FieldFormaterFactory.cs" />
+    <Compile Include="Legacy\Export\RequestHandler\Formater\IFieldFormater.cs" />
+    <Compile Include="Legacy\Export\RequestHandler\Generator\AbstractRequestGenerator.cs" />
+    <Compile Include="Legacy\Export\RequestHandler\Generator\Condition\BaseCondition.cs" />
+    <Compile Include="Legacy\Export\RequestHandler\Generator\Condition\ConditionFactory.cs" />
+    <Compile Include="Legacy\Export\RequestHandler\Generator\Condition\ICondition.cs" />
+    <Compile Include="Legacy\Export\RequestHandler\Generator\ExportStudentRequestGenerator.cs" />
+    <Compile Include="Legacy\Export\RequestHandler\Generator\ExportType.cs" />
+    <Compile Include="Legacy\Export\RequestHandler\Generator\IRequestGenerator.cs" />
+    <Compile Include="Legacy\Export\RequestHandler\Generator\Orders\Order.cs" />
+    <Compile Include="Legacy\Export\RequestHandler\Generator\RequestGeneratorFactory.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\Connector\ExportClassConnector.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\Connector\ExportCourseConnector.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\Connector\ExportStudentConnector.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\Connector\ExportTeacherConnector.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\Connector\IExportConnector.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\Converter\BaseConverter.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\Converter\ConverterFactory.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\Converter\IConverter.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\DataType\BooleanDataType.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\DataType\DataTypeFactory.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\DataType\DateTimeDataType.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\DataType\DoubleDataType.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\DataType\IDataType.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\DataType\IntegerDataType.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\DataType\ObjectDataType.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\DataType\StringDataType.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\DataType\TypeProvider.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\ExportCell.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\ExportField.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\ExportFieldCollection.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\ExportRow.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\ExportRowCollection.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\ExportTable.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\FieldExpend.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\Formater\IResponseFormater.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\Formater\ResponseFormater.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\Formater\ResponseFormaterFactory.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\Output\ExportOutput.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\Output\IOutput.cs" />
+    <Compile Include="Legacy\Export\ResponseHandler\Output\XmlOutput.cs" />
+    <Compile Include="Legacy\Export\Util\FieldUtil.cs" />
+    <Compile Include="Legacy\ImportExport\ExportStudentV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Legacy\ImportExport\ExportStudentV2.Designer.cs">
+      <DependentUpon>ExportStudentV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Legacy\ImportExport\ImportStudentV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Legacy\ImportExport\ImportStudentV2.Designer.cs">
+      <DependentUpon>ImportStudentV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Legacy\ImportSupport\CellComment.cs" />
+    <Compile Include="Legacy\ImportSupport\IDataAccess.cs" />
+    <Compile Include="Legacy\ImportSupport\ImportCondition.cs" />
+    <Compile Include="Legacy\ImportSupport\ImportField.cs" />
+    <Compile Include="Legacy\ImportSupport\ImportMode.cs" />
+    <Compile Include="Legacy\ImportSupport\IValidatorFactory.cs" />
+    <Compile Include="Legacy\ImportSupport\Lookups\ClassLookup.cs" />
+    <Compile Include="Legacy\ImportSupport\Lookups\GPLookup.cs" />
+    <Compile Include="Legacy\ImportSupport\Lookups\SCRLookup.cs" />
+    <Compile Include="Legacy\ImportSupport\Lookups\StudentLookup.cs" />
+    <Compile Include="Legacy\ImportSupport\Lookups\TeacherLookup.cs" />
+    <Compile Include="Legacy\ImportSupport\Lookups\TemplateLookup.cs" />
+    <Compile Include="Legacy\ImportSupport\SheetHelper.cs" />
+    <Compile Include="Legacy\ImportSupport\SheetRowSource.cs" />
+    <Compile Include="Legacy\ImportSupport\TipStyles.cs" />
+    <Compile Include="Legacy\ImportSupport\ValidateHelper.cs" />
+    <Compile Include="Legacy\ImportSupport\Validators\ClassLookupFieldValidator.cs" />
+    <Compile Include="Legacy\ImportSupport\Validators\CommonClasses.cs" />
+    <Compile Include="Legacy\ImportSupport\Validators\CommonValidatorFactory.cs" />
+    <Compile Include="Legacy\ImportSupport\Validators\GPLookupFieldValidator.cs" />
+    <Compile Include="Legacy\ImportSupport\Validators\InsertDBUniqueRowValidator.cs" />
+    <Compile Include="Legacy\ImportSupport\Validators\InsertSheetUniqueRowValidator.cs" />
+    <Compile Include="Legacy\ImportSupport\Validators\MixDateFieldValidator.cs" />
+    <Compile Include="Legacy\ImportSupport\Validators\SCRLookupFieldValidator.cs" />
+    <Compile Include="Legacy\ImportSupport\Validators\ShiftCheckRowValidator.cs" />
+    <Compile Include="Legacy\ImportSupport\Validators\TeacherLookupFieldValidator.cs" />
+    <Compile Include="Legacy\ImportSupport\Validators\TemplateLookupFieldValidator.cs" />
+    <Compile Include="Legacy\ImportSupport\Validators\UpdateIdentifyRowValidator.cs" />
+    <Compile Include="Legacy\ImportSupport\Validators\UpdateUniqueRowValidator.cs" />
+    <Compile Include="Legacy\ImportSupport\WizardContext.cs" />
+    <Compile Include="Legacy\Photo.cs" />
     <Compile Include="PasswordHash.cs" />
     <Compile Include="PermRecLogProcess.cs" />
     <Compile Include="Program.cs" />
@@ -120,16 +293,115 @@
     <Compile Include="SchoolInfoMangement.Designer.cs">
       <DependentUpon>SchoolInfoMangement.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchParentEntity.cs" />
+    <Compile Include="SearchStudentRecord.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="StudentData_Extensions.cs" />
+    <Compile Include="StudentExtendControls\BaseInfoPalmerwormItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StudentExtendControls\BaseInfoPalmerwormItem.Designer.cs">
+      <DependentUpon>BaseInfoPalmerwormItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentExtendControls\GradeYear_Class_View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StudentExtendControls\NavViewNode.cs" />
+    <Compile Include="StudentExtendControls\Ribbon\AddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentExtendControls\Ribbon\AddStudent.Designer.cs">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentExtendControls\Ribbon\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentRecord.cs" />
+    <Compile Include="StudentTag.cs" />
+    <Compile Include="StudentTagRecord.cs" />
+    <Compile Include="Tag.cs" />
+    <Compile Include="TagRecord.cs" />
+    <Compile Include="Teacher.cs" />
+    <Compile Include="TeacherExtendControls\BaseInfoItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherExtendControls\BaseInfoItem.Designer.cs">
+      <DependentUpon>BaseInfoItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherExtendControls\NavViewNode.cs" />
+    <Compile Include="TeacherExtendControls\Ribbon\AddTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherExtendControls\Ribbon\AddTeacher.Designer.cs">
+      <DependentUpon>AddTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherExtendControls\Ribbon\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherExtendControls\Ribbon\TaggingMenu.cs" />
+    <Compile Include="TeacherExtendControls\Ribbon\TeacherExportWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherExtendControls\Ribbon\TeacherExportWizard.Designer.cs">
+      <DependentUpon>TeacherExportWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherExtendControls\Ribbon\TeacherImportWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherExtendControls\Ribbon\TeacherImportWizard.Designer.cs">
+      <DependentUpon>TeacherImportWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherExtendControls\Ribbon\TeacherImportWizardControls\ImportDataAccess.cs" />
+    <Compile Include="TeacherExtendControls\Ribbon\TeacherTagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherExtendControls\Ribbon\TeacherTagForm.Designer.cs">
+      <DependentUpon>TeacherTagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherExtendControls\SuperviseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherRecord.cs" />
+    <Compile Include="TeacherTag.cs" />
+    <Compile Include="TeacherTagRecord.cs" />
     <Compile Include="UserInfoManager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserInfoManager.Designer.cs">
       <DependentUpon>UserInfoManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="ValueTextItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClassExtendControls\Ribbon\Resources\btnAddClass.png" />
+    <Content Include="ClassExtendControls\Ribbon\Resources\btnAdjust.Image.png" />
+    <Content Include="ClassExtendControls\Ribbon\Resources\btnAssignStudent.Image.png" />
+    <Content Include="ClassExtendControls\Ribbon\Resources\btnCalcRule.Image.png" />
+    <Content Include="ClassExtendControls\Ribbon\Resources\btnDeleteClass.png" />
+    <Content Include="ClassExtendControls\Ribbon\Resources\btnHistory.Image.png" />
+    <Content Include="ClassExtendControls\Ribbon\Resources\btnPlan.Image.png" />
+    <Content Include="ClassExtendControls\Ribbon\Resources\btnReport.Image.png" />
+    <Content Include="ClassExtendControls\Ribbon\Resources\btnSaveClass.Image.png" />
+    <Content Include="ClassExtendControls\Ribbon\Resources\btnStatistics.Image.png" />
+    <Content Include="ClassExtendControls\Ribbon\Resources\btnSurvey.Image.png" />
+    <Content Include="ClassExtendControls\Ribbon\Resources\btnUpgrade.Image.png" />
+    <Content Include="ClassExtendControls\Ribbon\Resources\planCourse.png" />
+    <Content Include="ClassExtendControls\Ribbon\Resources\searchHistory.png" />
+    <Content Include="InternalExtendControls\Tagging\Resources\Checked.png" />
+    <Content Include="InternalExtendControls\Tagging\Resources\ctxTag.Image.png" />
+    <Content Include="InternalExtendControls\Tagging\Resources\Indeterminate.png" />
+    <Content Include="InternalExtendControls\Tagging\Resources\Unchecked.png" />
     <Content Include="Library\Aspose.Cells.dll" />
     <Content Include="Library\Aspose.Cells.xml" />
+    <Content Include="Library\Campus.Windows.dll" />
+    <Content Include="Library\Campus.Windows.pdb" />
+    <Content Include="Library\Campus.Windows.xml" />
     <Content Include="Library\DevComponents.DotNetBar2.dll" />
     <Content Include="Library\DevComponents.DotNetBar2.xml" />
     <Content Include="Library\FISCA.Authentication.dll" />
@@ -160,12 +432,41 @@
     <Content Include="Library\FISCA.Presentation.xml" />
     <Content Include="Library\Framework.dll" />
     <Content Include="Library\Framework.pdb" />
+    <Content Include="Library\IntelliSchool.DSA.ClientFramework.dll" />
+    <Content Include="Library\IntelliSchool.DSA.ClientFramework.xml" />
     <Content Include="Library\K12.Data.dll" />
     <Content Include="Library\K12.Data.pdb" />
     <Content Include="Library\K12.Data.xml" />
     <Content Include="Library\K12.Presentation.dll" />
     <Content Include="Library\K12.Presentation.pdb" />
     <Content Include="Library\K12.Presentation.xml" />
+    <Content Include="Library\SmartSchool.API.PlugIn.dll" />
+    <Content Include="Library\SmartSchool.API.PlugIn.pdb" />
+    <Content Include="Library\SmartSchool.Common.dll" />
+    <Content Include="Library\SmartSchool.Common.DotNetBar.dll" />
+    <Content Include="Library\SmartSchool.Customization.PlugIn.dll" />
+    <Content Include="Library\SmartSchool.Customization.PlugIn.xml" />
+    <Content Include="StudentExtendControls\Ribbon\Resources\btnAddStudent_Image.png" />
+    <Content Include="StudentExtendControls\Ribbon\Resources\btnAttendance.Image.png" />
+    <Content Include="StudentExtendControls\Ribbon\Resources\btnDeleteStudent_Image.png" />
+    <Content Include="StudentExtendControls\Ribbon\Resources\btnDemerit.Image.png" />
+    <Content Include="StudentExtendControls\Ribbon\Resources\btnHistory.Image.png" />
+    <Content Include="StudentExtendControls\Ribbon\Resources\btnMap.Image.png" />
+    <Content Include="StudentExtendControls\Ribbon\Resources\btnMerit.Image.png" />
+    <Content Include="StudentExtendControls\Ribbon\Resources\btnPlacing.Image.png" />
+    <Content Include="StudentExtendControls\Ribbon\Resources\btnQueryCoor.Image.png" />
+    <Content Include="StudentExtendControls\Ribbon\Resources\btnReport.Image.png" />
+    <Content Include="StudentExtendControls\Ribbon\Resources\btnSaveStudent.Image.png" />
+    <Content Include="StudentExtendControls\Ribbon\Resources\btnStatistics.Image.png" />
+    <Content Include="StudentExtendControls\Ribbon\Resources\calcScore.png" />
+    <Content Include="StudentExtendControls\Ribbon\Resources\coursePlan.png" />
+    <Content Include="TeacherExtendControls\Ribbon\Resources\btnAddTeacher.Image.png" />
+    <Content Include="TeacherExtendControls\Ribbon\Resources\btnAddTeacher.png" />
+    <Content Include="TeacherExtendControls\Ribbon\Resources\btnDeleteTeacher.Image.png" />
+    <Content Include="TeacherExtendControls\Ribbon\Resources\btnDeleteTeacher.png" />
+    <Content Include="TeacherExtendControls\Ribbon\Resources\btnHistory.Image.png" />
+    <Content Include="TeacherExtendControls\Ribbon\Resources\btnReport.Image.png" />
+    <Content Include="TeacherExtendControls\Ribbon\Resources\btnSaveTeacher.Image.png" />
     <None Include="Resources\world_upload_64.png" />
     <None Include="Resources\user_write_64.png" />
     <None Include="Resources\TeacherIcon.png" />
@@ -196,9 +497,25 @@
     <None Include="Resources\aspose.total.lic" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ClassExtendControls\Ribbon\Resource1.resx">
+    <EmbeddedResource Include="ClassExtendControls\Ribbon\Resource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternalExtendControls\Tagging\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternalExtendControls\Tagging\TagEditor.resx">
+      <DependentUpon>TagEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternalExtendControls\Tagging\TagForm.resx">
+      <DependentUpon>TagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Legacy\ImportExport\ExportStudentV2.resx">
+      <DependentUpon>ExportStudentV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Legacy\ImportExport\ImportStudentV2.resx">
+      <DependentUpon>ImportStudentV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -207,11 +524,45 @@
     <EmbeddedResource Include="SchoolInfoMangement.resx">
       <DependentUpon>SchoolInfoMangement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StudentExtendControls\BaseInfoPalmerwormItem.resx">
+      <DependentUpon>BaseInfoPalmerwormItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentExtendControls\GradeYear_Class_View.resx">
+      <DependentUpon>GradeYear_Class_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentExtendControls\Ribbon\AddStudent.resx">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentExtendControls\Ribbon\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherExtendControls\Ribbon\AddTeacher.resx">
+      <DependentUpon>AddTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherExtendControls\Ribbon\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherExtendControls\Ribbon\TeacherExportWizard.resx">
+      <DependentUpon>TeacherExportWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherExtendControls\Ribbon\TeacherImportWizard.resx">
+      <DependentUpon>TeacherImportWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherExtendControls\Ribbon\TeacherTagForm.resx">
+      <DependentUpon>TeacherTagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherExtendControls\SuperviseView.resx">
+      <DependentUpon>SuperviseView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInfoManager.resx">
       <DependentUpon>UserInfoManager.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="CourseExtendControls\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

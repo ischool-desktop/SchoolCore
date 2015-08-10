@@ -302,13 +302,13 @@ namespace SchoolCore
             // 班級基本資料
             Class.Instance.AddDetailBulider(new FISCA.Presentation.DetailBulider<JHSchool.ClassExtendControls.ClassBaseInfoItem>());
 
-            //Class.Instance.AddDetailBulider(new JHSchool.Legacy.ContentItemBulider<ClassExtendControls.ClassBaseInfoItem>());
+            //Class.Instance.AddDetailBulider(new SchoolCore.Legacy.ContentItemBulider<ClassExtendControls.ClassBaseInfoItem>());
 
             Present.NavPaneContexMenu.GetChild("重新整理").Click += delegate { this.SyncAllBackground(); };
 
-            //Class.Instance.AddDetailBulider(new JHSchool.Legacy.ContentItemBulider<ClassExtendControls.ClassStudentItem>());
+            //Class.Instance.AddDetailBulider(new SchoolCore.Legacy.ContentItemBulider<ClassExtendControls.ClassStudentItem>());
             //電子報表(因相關功能未完成先註)
-            //Class.Instance.AddDetailBulider(new JHSchool.Legacy.ContentItemBulider<ClassExtendControls.ElectronicPaperPalmerworm>());
+            //Class.Instance.AddDetailBulider(new SchoolCore.Legacy.ContentItemBulider<ClassExtendControls.ElectronicPaperPalmerworm>());
 
             //Class.Instance.AddDetailBulider(new JHSchool.CriticalSection.Test_classInfo());
 

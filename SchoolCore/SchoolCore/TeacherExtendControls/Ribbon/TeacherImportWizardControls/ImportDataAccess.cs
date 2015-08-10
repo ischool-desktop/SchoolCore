@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
@@ -7,40 +8,38 @@ using SmartSchool.Feature.Teacher;
 using FISCA.DSAUtil;
 using SchoolCore.Legacy.ImportSupport;
 
-
-namespace SchoolCore.ClassExtendControls.Ribbon.ClassImportWizardControls
+namespace SchoolCore.TeacherExtendControls.Ribbon.TeacherImportWizardControls
 {
-    class ImportDataAccess : IDataAccess
+    internal class ImportDataAccess : IDataAccess
     {
-
         public XmlElement GetImportFieldList()
         {
-            return SmartSchool.Feature.Class.ClassBulkProcess.GetImportFieldList();
+            return TeacherBulkProcess.GetImportFieldList();
         }
 
         public XmlElement GetValidateFieldRule()
         {
-            return SmartSchool.Feature.Class.ClassBulkProcess.GetValidateFieldRule();
+            return TeacherBulkProcess.GetFieldValidationRule();
         }
 
         public XmlElement GetUniqueFieldData()
         {
-            return SmartSchool.Feature.Class.ClassBulkProcess.GetUniqueFieldData();
+            return TeacherBulkProcess.GetUniqueFieldData();
         }
 
         public XmlElement GetShiftCheckList(params string[] fieldNameList)
         {
-            return SmartSchool.Feature.Class.ClassBulkProcess.GetShiftCheckList(fieldNameList);
+            return TeacherBulkProcess.GetShiftCheckList(fieldNameList);
         }
 
         public void InsertImportData(XmlElement data)
         {
-            SmartSchool.Feature.Class.ClassBulkProcess.InsertImportData(data);
+            TeacherBulkProcess.InsertImportTeacher(data);
         }
 
         public void UpdateImportData(XmlElement data)
         {
-            SmartSchool.Feature.Class.ClassBulkProcess.UpdateImportData(data);
+            TeacherBulkProcess.UpdateImportTeacher(data);
         }
     }
 }

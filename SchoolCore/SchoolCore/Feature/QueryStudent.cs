@@ -109,24 +109,24 @@ namespace SchoolCore.Feature
             }
         }
 
-        public static List<SemesterHistoryRecord> GetSemesterHistories(params string[] primaryKeys)
-        {
-            return GetSemesterHistories((IEnumerable<string>)primaryKeys);
-        }
-        public static List<SemesterHistoryRecord> GetSemesterHistories(IEnumerable<string> primaryKeys)
-        {
-            List<SemesterHistoryRecord> result = new List<SemesterHistoryRecord>();
-            DSXmlHelper helper = GetDetailList(new string[] { "ID", "SemesterHistory" }, new List<string>(primaryKeys).ToArray()).GetContent();
-            foreach ( XmlElement element in helper.GetElements("Student") )
-            {///SemesterHistory/History
-                //var.SemesterHistoryList.Add(new SmartSchool.API.StudentExtension.SemesterHistory(element));
-                string ID = element.GetAttribute("ID");
-                foreach ( XmlElement item in element.SelectNodes("SemesterHistory/History") )
-                {
-                    result.Add(new SemesterHistoryRecord(ID, item));
-                }
-            }
-            return result;
-        }
+        //public static List<SemesterHistoryRecord> GetSemesterHistories(params string[] primaryKeys)
+        //{
+        //    return GetSemesterHistories((IEnumerable<string>)primaryKeys);
+        //}
+        //public static List<SemesterHistoryRecord> GetSemesterHistories(IEnumerable<string> primaryKeys)
+        //{
+        //    List<SemesterHistoryRecord> result = new List<SemesterHistoryRecord>();
+        //    DSXmlHelper helper = GetDetailList(new string[] { "ID", "SemesterHistory" }, new List<string>(primaryKeys).ToArray()).GetContent();
+        //    foreach ( XmlElement element in helper.GetElements("Student") )
+        //    {///SemesterHistory/History
+        //        //var.SemesterHistoryList.Add(new SmartSchool.API.StudentExtension.SemesterHistory(element));
+        //        string ID = element.GetAttribute("ID");
+        //        foreach ( XmlElement item in element.SelectNodes("SemesterHistory/History") )
+        //        {
+        //            result.Add(new SemesterHistoryRecord(ID, item));
+        //        }
+        //    }
+        //    return result;
+        //}
     }
 }

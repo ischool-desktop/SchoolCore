@@ -61,13 +61,13 @@ namespace SchoolCore.Editor
         /// <summary>
         /// 取得或設定學生所屬班級
         /// </summary>
-        public ClassRecord Class { get { return JHSchool.Class.Instance.Items[RefClassID]; } set { RefClassID = (value == null ? "" : value.ID); } }
+        public ClassRecord Class { get { return SchoolCore.Class.Instance.Items[RefClassID]; } set { RefClassID = (value == null ? "" : value.ID); } }
         ///// <summary>
         ///// 取得或設定學生所屬科別，變更此值將會同步變更OverriddenDepartment為true
         ///// </summary>
         //public DepartmentRecord Department
         //{
-        //    get { return OverrideDepartmentID == null ? (Class == null ? null : Class.Department) : JHSchool.Department.Instance[OverrideDepartmentID]; }
+        //    get { return OverrideDepartmentID == null ? (Class == null ? null : Class.Department) : SchoolCore.Department.Instance[OverrideDepartmentID]; }
         //    set { OverrideDepartmentID = (value == null ? "" : value.ID); }
         //}
         ///// <summary>

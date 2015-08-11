@@ -141,79 +141,79 @@ namespace SchoolCore.Feature
             DSAServices.CallService("SmartSchool.Student.Update", new DSRequest(req.BaseElement));
         }
 
-        internal static void SaveStudentTagRecordEditor(IEnumerable<SchoolCore.Editor.StudentTagRecordEditor> editors)
-        {
-            MultiThreadWorker<SchoolCore.Editor.StudentTagRecordEditor> worker = new MultiThreadWorker<SchoolCore.Editor.StudentTagRecordEditor>();
-            worker.MaxThreads = 3;
-            worker.PackageSize = 100;
-            worker.PackageWorker += delegate(object sender, PackageWorkEventArgs<SchoolCore.Editor.StudentTagRecordEditor> e)
-            {
-                DSXmlHelper updateHelper = new DSXmlHelper("Request");
-                DSXmlHelper insertHelper = new DSXmlHelper("Request");
-                DSXmlHelper deleteHelper = new DSXmlHelper("Request");
-                List<string> synclist = new List<string>(); //這個目前沒作用
-                bool hasInsert = false, hasDelete = false;
+        //internal static void SaveStudentTagRecordEditor(IEnumerable<SchoolCore.Editor.StudentTagRecordEditor> editors)
+        //{
+        //    MultiThreadWorker<SchoolCore.Editor.StudentTagRecordEditor> worker = new MultiThreadWorker<SchoolCore.Editor.StudentTagRecordEditor>();
+        //    worker.MaxThreads = 3;
+        //    worker.PackageSize = 100;
+        //    worker.PackageWorker += delegate(object sender, PackageWorkEventArgs<SchoolCore.Editor.StudentTagRecordEditor> e)
+        //    {
+        //        DSXmlHelper updateHelper = new DSXmlHelper("Request");
+        //        DSXmlHelper insertHelper = new DSXmlHelper("Request");
+        //        DSXmlHelper deleteHelper = new DSXmlHelper("Request");
+        //        List<string> synclist = new List<string>(); //這個目前沒作用
+        //        bool hasInsert = false, hasDelete = false;
 
-                foreach (var editor in e.List)
-                {
-                    #region 更新
-                    if (editor.EditorStatus == SchoolCore.Editor.EditorStatus.Update)
-                    {
-                        deleteHelper.AddElement("Tag");
-                        deleteHelper.AddElement("Tag", "RefStudentID", editor.RefEntityID);
-                        deleteHelper.AddElement("Tag", "RefTagID", editor.RefTagID);
+        //        foreach (var editor in e.List)
+        //        {
+        //            #region 更新
+        //            if (editor.EditorStatus == SchoolCore.Editor.EditorStatus.Update)
+        //            {
+        //                deleteHelper.AddElement("Tag");
+        //                deleteHelper.AddElement("Tag", "RefStudentID", editor.RefEntityID);
+        //                deleteHelper.AddElement("Tag", "RefTagID", editor.RefTagID);
 
-                        hasDelete = true;
-                        synclist.Add(editor.RefEntityID);
+        //                hasDelete = true;
+        //                synclist.Add(editor.RefEntityID);
 
-                        insertHelper.AddElement("Tag");
-                        insertHelper.AddElement("Tag", "RefStudentID", editor.RefEntityID);
-                        insertHelper.AddElement("Tag", "RefTagID", editor.RefTagID);
+        //                insertHelper.AddElement("Tag");
+        //                insertHelper.AddElement("Tag", "RefStudentID", editor.RefEntityID);
+        //                insertHelper.AddElement("Tag", "RefTagID", editor.RefTagID);
 
-                        hasInsert = true;
-                    }
-                    #endregion
+        //                hasInsert = true;
+        //            }
+        //            #endregion
 
-                    #region 新增
-                    if (editor.EditorStatus == SchoolCore.Editor.EditorStatus.Insert)
-                    {
-                        insertHelper.AddElement("Tag");
-                        insertHelper.AddElement("Tag", "RefStudentID", editor.RefEntityID);
-                        insertHelper.AddElement("Tag", "RefTagID", editor.RefTagID);
+        //            #region 新增
+        //            if (editor.EditorStatus == SchoolCore.Editor.EditorStatus.Insert)
+        //            {
+        //                insertHelper.AddElement("Tag");
+        //                insertHelper.AddElement("Tag", "RefStudentID", editor.RefEntityID);
+        //                insertHelper.AddElement("Tag", "RefTagID", editor.RefTagID);
 
-                        hasInsert = true;
-                    }
-                    #endregion
+        //                hasInsert = true;
+        //            }
+        //            #endregion
 
-                    #region 刪除
-                    if (editor.EditorStatus == SchoolCore.Editor.EditorStatus.Delete)
-                    {
-                        deleteHelper.AddElement("Tag");
-                        deleteHelper.AddElement("Tag", "RefStudentID", editor.RefEntityID);
-                        deleteHelper.AddElement("Tag", "RefTagID", editor.RefTagID);
+        //            #region 刪除
+        //            if (editor.EditorStatus == SchoolCore.Editor.EditorStatus.Delete)
+        //            {
+        //                deleteHelper.AddElement("Tag");
+        //                deleteHelper.AddElement("Tag", "RefStudentID", editor.RefEntityID);
+        //                deleteHelper.AddElement("Tag", "RefTagID", editor.RefTagID);
 
-                        hasDelete = true;
-                        synclist.Add(editor.RefEntityID);
-                    }
-                    #endregion
-                }
+        //                hasDelete = true;
+        //                synclist.Add(editor.RefEntityID);
+        //            }
+        //            #endregion
+        //        }
 
-                if (hasInsert)
-                {
-                    DSXmlHelper response = DSAServices.CallService("SmartSchool.Tag.AddStudentTag", new DSRequest(insertHelper.BaseElement)).GetContent();
-                    foreach (XmlElement each in response.GetElements("NewID"))
-                        synclist.Add(each.InnerText);
-                }
+        //        if (hasInsert)
+        //        {
+        //            DSXmlHelper response = DSAServices.CallService("SmartSchool.Tag.AddStudentTag", new DSRequest(insertHelper.BaseElement)).GetContent();
+        //            foreach (XmlElement each in response.GetElements("NewID"))
+        //                synclist.Add(each.InnerText);
+        //        }
 
-                if (hasDelete)
-                    DSAServices.CallService("SmartSchool.Tag.RemoveStudentTag", new DSRequest(deleteHelper.BaseElement));
-            };
-            List<PackageWorkEventArgs<SchoolCore.Editor.StudentTagRecordEditor>> packages = worker.Run(editors);
-            foreach (PackageWorkEventArgs<SchoolCore.Editor.StudentTagRecordEditor> each in packages)
-            {
-                if (each.HasException)
-                    throw each.Exception;
-            }
-        }
+        //        if (hasDelete)
+        //            DSAServices.CallService("SmartSchool.Tag.RemoveStudentTag", new DSRequest(deleteHelper.BaseElement));
+        //    };
+        //    List<PackageWorkEventArgs<SchoolCore.Editor.StudentTagRecordEditor>> packages = worker.Run(editors);
+        //    foreach (PackageWorkEventArgs<SchoolCore.Editor.StudentTagRecordEditor> each in packages)
+        //    {
+        //        if (each.HasException)
+        //            throw each.Exception;
+        //    }
+        //}
     }
 }

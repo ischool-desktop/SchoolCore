@@ -15,7 +15,7 @@ namespace SmartSchool.Feature.Teacher
         {
             //Åª¨úXMLÄæ¦ì´y­z
             XmlDocument doc = new XmlDocument();
-            doc.LoadXml(JHSchool.Properties.Resources.JH_T_ExportDescription);
+            doc.LoadXml(SchoolCore.Properties.Resources.JH_T_ExportDescription);
 
             return doc.DocumentElement;
             //return CallNoneRequestService("SmartSchool.Teacher.BulkProcessJH.GetExportDescription");
@@ -26,7 +26,7 @@ namespace SmartSchool.Feature.Teacher
         {
             //Åª¨úXMLÄæ¦ì´y­z
             XmlDocument doc = new XmlDocument();
-            doc.LoadXml(JHSchool.Properties.Resources.JH_T_BulkDescription);
+            doc.LoadXml(SchoolCore.Properties.Resources.JH_T_BulkDescription);
 
             return doc.DocumentElement;
             //return CallNoneRequestService("SmartSchool.Teacher.BulkProcessJH.GetBulkDescription");
@@ -38,7 +38,7 @@ namespace SmartSchool.Feature.Teacher
         {
             //Åª¨úXMLÄæ¦ì´y­z
             XmlDocument doc = new XmlDocument();
-            doc.LoadXml(JHSchool.Properties.Resources.JH_T_ImportFieldList);
+            doc.LoadXml(SchoolCore.Properties.Resources.JH_T_ImportFieldList);
 
             return doc.DocumentElement;
             //return CallNoneRequestService("SmartSchool.Teacher.BulkProcessJH.GetImportFieldList");
@@ -83,7 +83,7 @@ namespace SmartSchool.Feature.Teacher
         {
             //Åª¨úXMLÄæ¦ì´y­z
             XmlDocument doc = new XmlDocument();
-            doc.LoadXml(JHSchool.Properties.Resources.JH_T_FieldValidationRule);
+            doc.LoadXml(SchoolCore.Properties.Resources.JH_T_FieldValidationRule);
 
             return doc.DocumentElement;
             //return CallNoneRequestService("SmartSchool.Teacher.BulkProcessJH.GetFieldValidationRule");

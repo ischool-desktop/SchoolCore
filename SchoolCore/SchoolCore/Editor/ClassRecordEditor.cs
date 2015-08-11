@@ -21,14 +21,14 @@ namespace SchoolCore.Editor
         public string DisplayOrder { get; set; }
         public TeacherRecord Teacher
         {
-            get { return JHSchool.Teacher.Instance.Items[RefTeacherID]; }
+            get { return SchoolCore.Teacher.Instance.Items[RefTeacherID]; }
             set { RefTeacherID = value.ID; }
         }
-        public DepartmentRecord Department
-        {
-            get { return JHSchool.Department.Instance.Items[RefDepartmentID]; }
-            set { RefDepartmentID = value.ID; }
-        }
+        //public DepartmentRecord Department
+        //{
+        //    get { return JHSchool.Department.Instance.Items[RefDepartmentID]; }
+        //    set { RefDepartmentID = value.ID; }
+        //}
         //public List<StudentRecord> Students { get { return Student.Instance.GetClassStudents(this); } }
 
         internal ClassRecord Class { get; private set; }

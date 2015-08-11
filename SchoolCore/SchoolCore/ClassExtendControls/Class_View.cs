@@ -8,39 +8,28 @@ using System.Windows.Forms;
 using FISCA.Presentation;
 using Framework;
 
-namespace SchoolCore.StudentExtendControls
+namespace SchoolCore.ClassExtendControls
 {
-    public partial class GradeYear_Class_View : NavView
+    public partial class Class_View : NavView
     {
-        public GradeYear_Class_View()
+        public Class_View()
         {
             InitializeComponent();
-            NavText = "班級檢視";
-
-            Class.Instance.ItemUpdated += new EventHandler<ItemUpdatedEventArgs>(Instance_ItemUpdated);
-            SourceChanged += new EventHandler(GradeYear_Class_View_SourceChanged);
+            this.NavText = "班級檢視";
+            SourceChanged += Class_View_SourceChanged;
         }
 
-        void GradeYear_Class_View_SourceChanged(object sender, EventArgs e)
+        void Class_View_SourceChanged(object sender, EventArgs e)
         {
             Layout(new List<string>(Source));
         }
 
-        void Instance_ItemUpdated(object sender, ItemUpdatedEventArgs e)
-        {
-            Layout(mPrimaryKeys);
-        }
-
         #region NavView 成員
-
-        private Dictionary<DevComponents.AdvTree.Node, List<string>> items = new Dictionary<DevComponents.AdvTree.Node, List<string>>();
-        private List<string> mPrimaryKeys = new List<string>();
+        Dictionary<DevComponents.AdvTree.Node, List<string>> items = new Dictionary<DevComponents.AdvTree.Node, List<string>>();
 
         public new void Layout(List<string> PrimaryKeys)
         {
             //選取的結點的完整路徑
-            mPrimaryKeys = PrimaryKeys;
-
             List<string> selectPath = new List<string>();
             #region 記錄選取的結點的完整路徑
             var selectNode = advTree1.SelectedNode;
@@ -53,142 +42,73 @@ namespace SchoolCore.StudentExtendControls
                 }
             }
             #endregion
+
             advTree1.Nodes.Clear();
             items.Clear();
 
-
+            //用來記錄年級及班級對應的資料結構，第一維記錄年級，第二維記錄年級下的班級編號
             SortedList<int?, List<string>> gradeYearList = new SortedList<int?, List<string>>();
+
+            //用來記錄未分類的班級編號
             List<string> nullGradeList = new List<string>();
-            List<string> nullClassList = new List<string>();
-            Dictionary<ClassRecord, List<string>> classList = new Dictionary<ClassRecord, List<string>>();
-            Dictionary<ClassRecord, int?> classGradeYear = new Dictionary<ClassRecord, int?>();
-            List<ClassRecord> classes = new List<ClassRecord>();
 
             DevComponents.AdvTree.Node rootNode = new DevComponents.AdvTree.Node();
 
-            rootNode.Text = "所有學生(" + PrimaryKeys.Count + ")";
+            rootNode.Text = "所有班級(" + PrimaryKeys.Count + ")";
 
+            //取得所有班級編號
             foreach (var key in PrimaryKeys)
             {
-                var studentRec = Student.Instance.Items[key];
-                ClassRecord classRec = studentRec.Class;
+                //根據學生記錄取得班級記錄
+                ClassRecord classRec = Class.Instance[key];
+
+                //根據班級記錄取得年級，若是年級為null則年級為空白
                 string gradeYear = (classRec == null ? "" : classRec.GradeYear);
-
-                //JHSchool.C001
-                //if (User.Acl["JHSchool.C001"].PermissionString != gradeYear)
-                //    continue;
-
                 int gyear = 0;
                 int? g;
+
+                //將gradeYear轉型成int
                 if (int.TryParse(gradeYear, out gyear))
                 {
                     g = gyear;
                     if (!gradeYearList.ContainsKey(g))
                         gradeYearList.Add(g, new List<string>());
+
+                    //將班級編號加入所屬年級的集合當中
                     gradeYearList[g].Add(key);
                 }
                 else
                 {
+                    //加入沒有分類的班級
                     g = null;
                     nullGradeList.Add(key);
                 }
-                if (classRec != null)
-                {
-                    if (!classList.ContainsKey(classRec))
-                    {
-                        classList.Add(classRec, new List<string>());
-                        classes.Add(classRec);
-                    }
-                    classList[classRec].Add(key);
-                    if (!classGradeYear.ContainsKey(classRec))
-                        classGradeYear.Add(classRec, g);
-                }
-                else
-                    nullClassList.Add(key);
             }
-            classes.Sort();
 
             foreach (var gyear in gradeYearList.Keys)
             {
                 DevComponents.AdvTree.Node gyearNode = new DevComponents.AdvTree.Node();
-                switch (gyear)
-                {
-                    //case 1:
-                    //    gyearNode.Text = "一年級";
-                    //    break;
-                    //case 2:
-                    //    gyearNode.Text = "二年級";
-                    //    break;
-                    //case 3:
-                    //    gyearNode.Text = "三年級";
-                    //    break;
-                    //case 4:
-                    //    gyearNode.Text = "四年級";
-                    //    break;
-                    default:
-                        gyearNode.Text = "" + gyear + "年級";
-                        break;
-
-                }
+                gyearNode.Text = "" + gyear + "年級";
 
                 gyearNode.Text += "(" + gradeYearList[gyear].Count + ")";
 
                 items.Add(gyearNode, gradeYearList[gyear]);
 
                 rootNode.Nodes.Add(gyearNode);
-
-                foreach (var classRec in classes)
-                {
-                    if (classGradeYear[classRec] == gyear)
-                    {
-                        DevComponents.AdvTree.Node classNode = new DevComponents.AdvTree.Node();
-
-                        classNode.Text = classRec.Name + "(" + classList[classRec].Count + ")";
-
-                        items.Add(classNode, classList[classRec]);
-
-                        gyearNode.Nodes.Add(classNode);
-                    }
-                }
             }
+
             if (nullGradeList.Count > 0)
             {
                 DevComponents.AdvTree.Node gyearNode = new DevComponents.AdvTree.Node();
-
                 gyearNode.Text = "未分年級(" + nullGradeList.Count + ")";
-
                 items.Add(gyearNode, nullGradeList);
 
                 rootNode.Nodes.Add(gyearNode);
-
-                foreach (var classRec in classes)
-                {
-                    if (classGradeYear[classRec] == null)
-                    {
-                        DevComponents.AdvTree.Node classNode = new DevComponents.AdvTree.Node();
-
-                        classNode.Text = classRec.Name + "(" + classList[classRec].Count + ")";
-
-                        items.Add(classNode, classList[classRec]);
-
-                        gyearNode.Nodes.Add(classNode);
-                    }
-                }
-                if (nullClassList.Count > 0)
-                {
-                    DevComponents.AdvTree.Node classNode = new DevComponents.AdvTree.Node();
-
-                    classNode.Text = "未分班(" + nullClassList.Count + ")";
-
-                    items.Add(classNode, nullClassList);
-
-                    gyearNode.Nodes.Add(classNode);
-                }
             }
 
-            rootNode.Expand();
-
             advTree1.Nodes.Add(rootNode);
+
+            rootNode.Expand();
 
             items.Add(rootNode, PrimaryKeys);
 
@@ -198,11 +118,7 @@ namespace SchoolCore.StudentExtendControls
                 if (selectNode != null)
                     advTree1.SelectedNode = selectNode;
             }
-
-
-            //advTree1.Focus();
         }
-
         private DevComponents.AdvTree.Node SelectNode(List<string> selectPath, int level, DevComponents.AdvTree.NodeCollection nodeCollection)
         {
             foreach (var item in nodeCollection)
@@ -227,15 +143,15 @@ namespace SchoolCore.StudentExtendControls
             }
             return null;
         }
-
         #endregion
+
         private void advTree1_AfterNodeSelect(object sender, DevComponents.AdvTree.AdvTreeNodeEventArgs e)
         {
             if (e.Node != null)
             {
-                bool selAll = (Control.ModifierKeys & Keys.Control) == Keys.Control;
-                bool addToTemp = (Control.ModifierKeys & Keys.Shift) == Keys.Shift;
-                SetListPaneSource(items[e.Node], selAll, addToTemp);
+                bool SelectedAll = (Control.ModifierKeys & Keys.Control) == Keys.Control;
+                bool AddToTemp = (Control.ModifierKeys & Keys.Shift) == Keys.Shift;
+                SetListPaneSource(items[e.Node], SelectedAll, AddToTemp);
             }
             else
             {
@@ -264,5 +180,6 @@ namespace SchoolCore.StudentExtendControls
             }
             catch (Exception) { }
         }
+
     }
 }

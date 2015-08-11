@@ -45,10 +45,6 @@ namespace SchoolCore
         public void SetupPresentation()
         {
             Class.Instance.RibbonBarItems["編輯"].Index = 0;
-            Class.Instance.RibbonBarItems["資料統計"].Index = 1;
-            Class.Instance.RibbonBarItems["指定"].Index = 2;
-            Class.Instance.RibbonBarItems["教務"].Index = 3;
-            Class.Instance.RibbonBarItems["學務"].Index = 4;
 
             #region RibbonBar 班級/編輯
             RibbonBarItem rbItem = Class.Instance.RibbonBarItems["編輯"];
@@ -57,7 +53,7 @@ namespace SchoolCore
             rbItem["新增"].Image = ClassExtendControls.Ribbon.Resources.btnAddClass;
             rbItem["新增"].Click += delegate
             {
-                new JHSchool.ClassExtendControls.Ribbon.AddClass().ShowDialog();
+                new SchoolCore.ClassExtendControls.Ribbon.AddClass().ShowDialog();
             };
 
             rbItem["刪除"].Size = RibbonBarButton.MenuButtonSize.Large;
@@ -67,7 +63,7 @@ namespace SchoolCore
             {
                 if (SelectedList.Count == 1)
                 {
-                    JHSchool.Data.JHClassRecord record = JHSchool.Data.JHClass.SelectByID(SelectedList[0].ID);
+                    K12.Data.ClassRecord record = K12.Data.Class.SelectByID(SelectedList[0].ID);
                     string msg;
                     // 當有學生
                     if (record.Students.Count > 0)
@@ -77,11 +73,11 @@ namespace SchoolCore
 
                     if (FISCA.Presentation.Controls.MsgBox.Show(msg, "刪除班級", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        JHSchool.Data.JHClassRecord classRec = JHSchool.Data.JHClass.SelectByID(record.ID);
+                        K12.Data.ClassRecord classRec = K12.Data.Class.SelectByID(record.ID);
 
                         PermRecLogProcess prlp = new PermRecLogProcess();
                         prlp.SaveLog("學籍.班級", "刪除班級", "刪除班級資料，班級名稱：" + classRec.Name);
-                        JHSchool.Data.JHClass.Delete(classRec);
+                        K12.Data.Class.Delete(classRec);
                         Class.Instance.SyncDataBackground(record.ID);
                     }
                     else
@@ -90,142 +86,7 @@ namespace SchoolCore
                 }
             };
             #endregion
-
-            #region RibbonBar 學生/匯入匯出
-
-            rbItem = Class.Instance.RibbonBarItems["資料統計"];
-            rbItem["匯出"].Size = RibbonBarButton.MenuButtonSize.Large;
-            rbItem["匯出"].Image = Properties.Resources.Export_Image;
-            rbItem["匯出"]["匯出班級基本資料"].Enable = User.Acl["JHSchool.Class.Ribbon0030"].Executable;
-            rbItem["匯出"]["匯出班級基本資料"].Click += delegate
-            {
-                new JHSchool.ClassExtendControls.Ribbon.ClassExportWizard().ShowDialog();
-            };
-
-            rbItem["匯入"].Size = RibbonBarButton.MenuButtonSize.Large;
-            rbItem["匯入"].Image = Properties.Resources.Import_Image;
-            rbItem["匯入"]["匯入班級基本資料"].Enable = User.Acl["JHSchool.Class.Ribbon0020"].Executable;
-            rbItem["匯入"]["匯入班級基本資料"].Click += delegate
-            {
-                new JHSchool.ClassExtendControls.Ribbon.ClassImportWizard().ShowDialog();
-            };
-            #endregion
-
-            //報表,是以常態呈現
-            rbItem["報表"].Size = RibbonBarButton.MenuButtonSize.Large;
-            rbItem["報表"].Image = Properties.Resources.paste_64;
-            rbItem["報表"].SupposeHasChildern = true;
-
-            #region RibbonBar 班級/學務作業
-            //rbItem = Class.Instance.RibbonBarItems["學務作業"];
-            //rbItem["德行加減分"].Size = RibbonBarButton.MenuButtonSize.Large;
-            //rbItem["德行加減分"].Image = ClassExtendControls.Ribbon.Resources.btnAdjust_Image;
-            //rbItem["德行加減分"].Click += delegate
-            //{
-
-            //};
-
-            //rbItem["文字評量"].Size = RibbonBarButton.MenuButtonSize.Large;
-            //rbItem["文字評量"].Click += delegate
-            //{
-
-            //};
-            #endregion
-
-            #region RibbonBar 班級/教務作業
-            //rbItem = Class.Instance.RibbonBarItems["教務作業"];
-            //rbItem["班級升級"].Image = ClassExtendControls.Ribbon.Resources.btnUpgrade_Image;
-            //rbItem["班級升級"].Click += delegate
-            //{
-
-            //};
-            #endregion
-
-            #region RibbonBar 班級/指定
-            rbItem = Class.Instance.RibbonBarItems["指定"];
-            //rbItem["類別"].Image = InternalExtendControls.Tagging.Resources.ctxTag_Image;
-            //rbItem["類別"].Size = RibbonBarButton.MenuButtonSize.Medium;
-            //rbItem["類別"].SupposeHasChildern = true;
-            //rbItem["類別"].PopupOpen += new EventHandler<PopupOpenEventArgs>(
-            //    new TaggingMenu("JHSchool.Class.Ribbon0040", "JHSchool.Class.Ribbon0050").MenuOpen);
-
-            //rbItem = Class.Instance.RibbonBarItems["指定"];
-            //rbItem["學生"].Size = RibbonBarButton.MenuButtonSize.Small;
-            //rbItem["學生"].Image = ClassExtendControls.Ribbon.Resources.btnAssignStudent_Image;
-            //rbItem["學生"].Click += delegate
-            //{
-
-            //};
-
-            //rbItem["課程規劃"].Size = RibbonBarButton.MenuButtonSize.Small;
-            //rbItem["課程規劃"].Image = ClassExtendControls.Ribbon.Resources.btnPlan_Image;
-            //rbItem["課程規劃"].Click += delegate
-            //{
-
-            //};
-
-            //rbItem["計算規則"].Size = RibbonBarButton.MenuButtonSize.Small;
-            //rbItem["計算規則"].Image = ClassExtendControls.Ribbon.Resources.btnCalcRule_Image;
-            //rbItem["計算規則"].Click += delegate
-            //{
-
-            //};
-            #endregion
-
-            #region RibbonBar 班級/統計報表0
-            //rbItem = Class.Instance.RibbonBarItems["統計報表"];
-            //rbItem["統計"].Image = ClassExtendControls.Ribbon.Resources.btnStatistics_Image;
-            //rbItem["統計"].Click += delegate
-            //{
-
-            //};
-
-            //rbItem["報表"].Image = ClassExtendControls.Ribbon.Resources.btnReport_Image;
-            //rbItem["報表"].Click += delegate
-            //{
-
-            //};
-            #endregion
-
-            #region RibbonBar 班級/其它
-            //rbItem = Class.Instance.RibbonBarItems["其它"];
-            //rbItem["修改歷程"].Size = RibbonBarButton.MenuButtonSize.Large;
-            //rbItem["修改歷程"].Image = ClassExtendControls.Ribbon.Resources.btnHistory_Image;
-            //rbItem["修改歷程"].Click += delegate
-            //{
-
-            //};
-
-            //rbItem["問卷"].Size = RibbonBarButton.MenuButtonSize.Large;
-            //rbItem["問卷"].Image = ClassExtendControls.Ribbon.Resources.btnSurvey_Image;
-            //rbItem["問卷"].Click += delegate
-            //{
-
-            //};
-            #endregion
-
-            //ListPaneField idField = new ListPaneField("ID");
-            //idField.GetVariable += delegate(object sender, GetVariableEventArgs e)
-            //{
-            //    e.Value = e.Key;
-            //};
-
-            //#region 排序班級ID
-            //idField.CompareValue += delegate(object sender, CompareValueEventArgs e)
-            //{
-            //    int x, y;
-
-            //    if (!int.TryParse(e.Value1.ToString(), out x))
-            //        x = int.MaxValue;
-
-            //    if (!int.TryParse(e.Value2.ToString(), out y))
-            //        y = int.MaxValue;
-
-            //    e.Result = x.CompareTo(y);
-            //};
-            //#endregion
-            //this.AddListPaneField(idField);
-
+            
             ListPaneField gradeYearField = new ListPaneField("年級");
             gradeYearField.GetVariable += delegate(object sender, GetVariableEventArgs e)
             {
@@ -294,37 +155,22 @@ namespace SchoolCore
             };
             this.AddListPaneField(classNamingRuleField);
 
-            //Class.Instance.AddView(new AllItemView());
-
-            Class.Instance.AddView(new JHSchool.StudentExtendControls.Class_View());
-            //Class.Instance.AddView(new JHSchool.ClassExtendControls.SubjectView()); //由類別模組提供
+            // 加入班級 View
+            Class.Instance.AddView(new SchoolCore.ClassExtendControls.Class_View());
 
             // 班級基本資料
-            Class.Instance.AddDetailBulider(new FISCA.Presentation.DetailBulider<JHSchool.ClassExtendControls.ClassBaseInfoItem>());
-
-            //Class.Instance.AddDetailBulider(new SchoolCore.Legacy.ContentItemBulider<ClassExtendControls.ClassBaseInfoItem>());
-
+            Class.Instance.AddDetailBulider(new FISCA.Presentation.DetailBulider<SchoolCore.ClassExtendControls.ClassBaseInfoItem>());
+            
             Present.NavPaneContexMenu.GetChild("重新整理").Click += delegate { this.SyncAllBackground(); };
-
-            //Class.Instance.AddDetailBulider(new SchoolCore.Legacy.ContentItemBulider<ClassExtendControls.ClassStudentItem>());
-            //電子報表(因相關功能未完成先註)
-            //Class.Instance.AddDetailBulider(new SchoolCore.Legacy.ContentItemBulider<ClassExtendControls.ElectronicPaperPalmerworm>());
-
-            //Class.Instance.AddDetailBulider(new JHSchool.CriticalSection.Test_classInfo());
-
+            
             #region 註冊權限管理
             Catalog ribbon = RoleAclSource.Instance["班級"]["功能按鈕"];
             ribbon.Add(new RibbonFeature("JHSchool.Class.Ribbon0000", "新增班級"));
             ribbon.Add(new RibbonFeature("JHSchool.Class.Ribbon0010", "刪除班級"));
-            ribbon.Add(new RibbonFeature("JHSchool.Class.Ribbon0020", "匯入班級資料"));
-            ribbon.Add(new RibbonFeature("JHSchool.Class.Ribbon0030", "匯出班級資料"));
-            //ribbon.Add(new RibbonFeature("JHSchool.Class.Ribbon0040", "指定班級類別"));
-            //ribbon.Add(new RibbonFeature("JHSchool.Class.Ribbon0050", "管理班級類別清單"));
-
+            
             Catalog detail = RoleAclSource.Instance["班級"]["資料項目"];
             detail.Add(new DetailItemFeature(typeof(ClassExtendControls.ClassBaseInfoItem)));
-            //電子報表(因相關功能未完成先註)
-            //detail.Add(new DetailItemFeature(typeof(ClassExtendControls.ElectronicPaperPalmerworm)));
+            
             #endregion
 
             #region 增加班級搜尋條件鈕
@@ -359,10 +205,7 @@ namespace SchoolCore
 
             #endregion
 
-            //由類別模組提供
-            //Present.SetDescriptionPaneBulider(new DescriptionPaneBulider<JHSchool.ClassExtendControls.ClassDescription>());
-
-            MotherForm.AddPanel(K12.Presentation.NLDPanels.Class);
+             MotherForm.AddPanel(K12.Presentation.NLDPanels.Class);
             _Initilized = true;
             FillFilter();
 
@@ -597,8 +440,25 @@ namespace SchoolCore
         }
 
         protected override List<string> AsKeyList(List<ClassRecord> list)
-        {
+        {           
+            
             return list.AsKeyList();
         }
     }
+
+    public static class Class_Extends
+    {
+        /// <summary>
+        /// 讀取班級的系統編號轉換成 List。
+        /// </summary>
+        public static List<string> AsKeyList(this IEnumerable<ClassRecord> classes)
+        {
+            List<string> keys = new List<string>();
+            foreach (ClassRecord each in classes)
+                keys.Add(each.ID);
+
+            return keys;
+        }
+    }
+
 }

@@ -27,7 +27,7 @@ namespace SchoolCore
             }
         }
 
-        private SemesterInfo FiltedSemester = new SemesterInfo() { SchoolYear = Framework.Int.Parse(School.DefaultSchoolYear), Semester = Framework.Int.Parse(School.DefaultSemester) };
+        private SemesterInfo FiltedSemester = new SemesterInfo() { SchoolYear = Framework.Int.Parse(K12.Data.School.DefaultSchoolYear), Semester = Framework.Int.Parse(K12.Data.School.DefaultSemester) };
 
         public new void AddDetailBulider(IDetailBulider item)
         {
@@ -47,120 +47,45 @@ namespace SchoolCore
         }
 
         public void SetupPresentation()
-        {
-            Course.Instance.RibbonBarItems["編輯"].Index = 0;
-            Course.Instance.RibbonBarItems["資料統計"].Index = 1;
-            Course.Instance.RibbonBarItems["指定"].Index = 2;
-            Course.Instance.RibbonBarItems["教務"].Index = 3;
+        {           
+            #region 課程/編輯            
+            RibbonBarItem rbItem = Course.Instance.RibbonBarItems["編輯"];
+            RibbonBarButton rbButton = rbItem["新增"];
+            rbButton.Size = RibbonBarButton.MenuButtonSize.Large;
+            rbButton.Image =SchoolCore.CourseExtendControls.Ribbon.Resources.btnAddCourse;
+            rbButton.Enable = User.Acl["JHSchool.Course.Ribbon0000"].Executable;
+            rbButton.Click += delegate
+            {
+                new SchoolCore.CourseExtendControls.Ribbon.AddCourse().ShowDialog();
+            };
+
+            rbButton = rbItem["刪除"];
+            rbButton.Size = RibbonBarButton.MenuButtonSize.Large;
+            rbButton.Image = SchoolCore.CourseExtendControls.Ribbon.Resources.btnDeleteCourse;
+            rbButton.Enable = User.Acl["JHSchool.Course.Ribbon0010"].Executable;
+            rbButton.Click += delegate
+            {
+                if (Course.Instance.SelectedKeys.Count == 1)
+                {
+                    K12.Data.CourseRecord course = K12.Data.Course.SelectByID(Course.Instance.SelectedList[0].ID);
+                        string msg = string.Format("確定要刪除「{0}」？", course.Name);
+                        if (MsgBox.Show(msg, "刪除課程", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            K12.Data.Course.Delete(course);
+                            // 加這主要是重新整理
+                            Course.Instance.SyncDataBackground(course.ID);
+                        }
+
+                }
+            };
+
+            #endregion
 
             //CourseSyncAllBackground
             FISCA.Features.Register("CourseSyncAllBackground", x =>
             {
                 this.SyncAllBackground();
-            });
-
-            RibbonBarItem rbItema = Course.Instance.RibbonBarItems["編輯"];
-
-            #region RibbonBar 學生/匯入匯出
-            RibbonBarItem rbItem = Course.Instance.RibbonBarItems["資料統計"];
-
-            rbItem["匯出"].Size = RibbonBarButton.MenuButtonSize.Large;
-            rbItem["匯出"].Image = Properties.Resources.Export_Image;
-            rbItem["匯出"]["匯出課程基本資料"].Enable = User.Acl["JHSchool.Course.Ribbon0030"].Executable;
-            rbItem["匯出"]["匯出課程基本資料"].Click += delegate
-            {
-                new JHSchool.CourseExtendControls.Ribbon.CourseExportWizard().ShowDialog();
-            };
-
-            rbItem["匯入"].Size = RibbonBarButton.MenuButtonSize.Large;
-            rbItem["匯入"].Image = Properties.Resources.Import_Image;
-            rbItem["匯入"]["匯入課程基本資料"].Enable = User.Acl["JHSchool.Course.Ribbon0020"].Executable;
-            rbItem["匯入"]["匯入課程基本資料"].Click += delegate
-            {
-                new JHSchool.CourseExtendControls.Ribbon.CourseImportWizard().ShowDialog();
-                Course.Instance.SyncAllBackground();
-            };
-            #endregion
-
-            //報表,是以常態呈現
-            rbItem["報表"].Size = RibbonBarButton.MenuButtonSize.Large;
-            rbItem["報表"].Image = Properties.Resources.paste_64;
-            rbItem["報表"].SupposeHasChildern = true;
-
-            #region RibbonBar 課程/指定
-            //目的是先建立按鈕順序(新增 / 刪除 / 類別)
-            //by dylan
-            RibbonBarItem rbItemx1 = Course.Instance.RibbonBarItems["編輯"];
-            RibbonBarButton rbButton = rbItemx1["新增"];
-            rbButton.Size = RibbonBarButton.MenuButtonSize.Large;
-            rbButton = rbItemx1["刪除"];
-            rbButton.Size = RibbonBarButton.MenuButtonSize.Large;
-
-            rbItem = Course.Instance.RibbonBarItems["指定"];
-            //由類別模組提供
-            //rbItem["類別"].Image = InternalExtendControls.Tagging.Resources.ctxTag_Image;
-            //rbItem["類別"].Size = RibbonBarButton.MenuButtonSize.Medium;
-            //rbItem["類別"].SupposeHasChildern = true;
-            //rbItem["類別"].PopupOpen += new EventHandler<PopupOpenEventArgs>(
-            //    new TaggingMenu("JHSchool.Course.Ribbon0040", "JHSchool.Course.Ribbon0050").MenuOpen);
-            #endregion
-
-            #region RibbonBar 課程/統計報表
-            //rbItem = Course.Instance.RibbonBarItems["統計報表"];
-            //rbItem["報表"].Size = RibbonBarButton.MenuButtonSize.Large;
-            //rbItem["報表"].Image = CourseExtendControls.Ribbon.Resources.btnReport_Image;
-            //rbItem["報表"].Click += delegate
-            //{
-
-            //};
-            #endregion
-
-            #region RibbonBar 課程/其它
-            //rbItem = Course.Instance.RibbonBarItems["其它"];
-            //rbItem["修改歷程"].Size = RibbonBarButton.MenuButtonSize.Large;
-            //rbItem["修改歷程"].Image = CourseExtendControls.Ribbon.Resources.btnHistory_Image;
-            //rbItem["修改歷程"].Click += delegate
-            //{
-
-            //};
-            #endregion
-
-            #region 註冊權限管理
-            Catalog ribbon = RoleAclSource.Instance["課程"]["功能按鈕"];
-            ribbon.Add(new RibbonFeature("JHSchool.Course.Ribbon0000", "新增課程資料"));
-            ribbon.Add(new RibbonFeature("JHSchool.Course.Ribbon0010", "刪除課程資料"));
-            ribbon.Add(new RibbonFeature("JHSchool.Course.Ribbon0020", "匯入課程資料"));
-            ribbon.Add(new RibbonFeature("JHSchool.Course.Ribbon0030", "匯出課程資料"));
-            //ribbon.Add(new RibbonFeature("JHSchool.Course.Ribbon0040", "指定課程類別"));
-            //ribbon.Add(new RibbonFeature("JHSchool.Course.Ribbon0050", "管理課程類別清單"));
-            ribbon.Add(new RibbonFeature("JHSchool.Course.Ribbon0060", "分組上課"));
-            ribbon.Add(new RibbonFeature("JHSchool.Course.Ribbon0070", "成績輸入"));
-            ribbon.Add(new RibbonFeature("JHSchool.Course.Ribbon0080", "成績計算"));
-
-            Catalog detail = RoleAclSource.Instance["課程"]["資料項目"];
-
-            Catalog report = RoleAclSource.Instance["課程"]["報表"];
-            report.Add(new ReportFeature("JHSchool.Course.Report0000", "學生修課清單"));
-            #endregion
-
-            //ListPaneField idField = new ListPaneField("ID");
-            //idField.GetVariable += delegate(object sender, GetVariableEventArgs e)
-            //{
-            //    e.Value = e.Key;
-            //};
-            //idField.CompareValue += delegate(object sender, CompareValueEventArgs e)
-            //{
-            //    int x, y;
-
-            //    if (!int.TryParse(e.Value1.ToString(), out x))
-            //        x = int.MaxValue;
-
-            //    if (!int.TryParse(e.Value2.ToString(), out y))
-            //        y = int.MaxValue;
-
-            //    e.Result = x.CompareTo(y);
-            //};
-            //this.AddListPaneField(idField);
+            });            
 
 
             #region Search Conditions
@@ -281,21 +206,14 @@ namespace SchoolCore
             };
             this.AddListPaneField(semScoreField);
 
-            //this.AddView(new AllItemView());
-
-            this.AddView(new SubjectView());
-            //this.AddView(new CategoryView()); //由類別模組提供
             this.AddView(new GradeYear_Class_View());
 
-            //this.RequiredDescription += delegate(object sender, RequiredDescriptionEventArgs e)
-            //{
-            //    e.Result = this[e.PrimaryKey].GetDescription();
-            //};
+            //課程基本資訊            
+            Course.Instance.AddDetailBulider(new FISCA.Presentation.DetailBulider<SchoolCore.CourseExtendControls.BasicInfoItem>());
+
 
             Present.NavPaneContexMenu.GetChild("重新整理").Click += delegate { this.SyncAllBackground(); };
 
-            //由類別模組提供
-            //Present.SetDescriptionPaneBulider(new DescriptionPaneBulider<CourseDescription>());
 
             Present.FilterMenu.SupposeHasChildern = true;
             Present.FilterMenu.PopupOpen += delegate(object sender, PopupOpenEventArgs e)
@@ -312,7 +230,6 @@ namespace SchoolCore
                 if (semesterList.Count <= 0)
                 {
                     MenuButton mb = e.VirtualButtons[FiltedSemester.ToString()];
-                    //mb.Visible = false;
                 }
                 semesterList.Sort();
                 foreach (var item in semesterList)
@@ -336,7 +253,6 @@ namespace SchoolCore
 
             MotherForm.AddPanel(K12.Presentation.NLDPanels.Course);
             _Initilized = true;
-            //FillFilter();
 
             UseFilter = true;
             SetSource();

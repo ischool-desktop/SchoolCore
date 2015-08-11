@@ -70,8 +70,8 @@
             // pic1
             // 
             this.contextMenuBar1.SetContextMenuEx(this.pic1, this.ctxChange1);
-            this.pic1.Image = global::JHSchool.Properties.Resources.People;
-            this.pic1.InitialImage = global::JHSchool.Properties.Resources.People;
+            this.pic1.Image = global::SchoolCore.Properties.Resources.People;
+            this.pic1.InitialImage = global::SchoolCore.Properties.Resources.People;
             this.pic1.Location = new System.Drawing.Point(108, 17);
             this.pic1.Name = "pic1";
             this.pic1.Size = new System.Drawing.Size(91, 100);

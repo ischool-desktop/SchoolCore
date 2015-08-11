@@ -24,7 +24,7 @@ namespace SchoolCore
         public string CalculationFlag { get; private set; }
         //public string Tags { get; private set; }
 
-        public ClassRecord Class { get { return JHSchool.Class.Instance[RefClassID]; } }
+        public ClassRecord Class { get { return SchoolCore.Class.Instance[RefClassID]; } }
 
         internal CourseRecord(XmlElement element)
         {

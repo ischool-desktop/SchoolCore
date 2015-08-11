@@ -66,11 +66,11 @@ namespace SchoolCore
         {
             get
             {
-                return JHSchool.Class.Instance.Items[RefClassID];
+                return SchoolCore.Class.Instance.Items[RefClassID];
             }
         }
 
-        internal StudentRecord(JHSchool.Data.JHStudentRecord student)
+        internal StudentRecord(K12.Data.StudentRecord student)
         {
             ID = student.ID;
             Status = student.Status.ToString();

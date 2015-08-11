@@ -83,71 +83,6 @@ namespace SchoolCore
             };
 
 
-            #endregion
-
-            #region RibbonBar 教師/匯入匯出
-            rbItem = Teacher.Instance.RibbonBarItems["資料統計"];
-
-            rbItem["匯出"].Size = RibbonBarButton.MenuButtonSize.Large;
-            rbItem["匯出"].Image = Properties.Resources.Export_Image;
-            rbItem["匯出"]["匯出教師基本資料"].Enable = User.Acl["JHSchool.Teacher.Ribbon0020"].Executable;
-            rbItem["匯出"]["匯出教師基本資料"].Click += delegate
-            {
-                new SchoolCore.TeacherExtendControls.Ribbon.TeacherExportWizard().ShowDialog();
-            };
-
-            rbItem["匯入"].Size = RibbonBarButton.MenuButtonSize.Large;
-            rbItem["匯入"].Image = Properties.Resources.Import_Image;
-            rbItem["匯入"]["匯入教師基本資料"].Enable = User.Acl["JHSchool.Teacher.Ribbon0030"].Executable;
-            rbItem["匯入"]["匯入教師基本資料"].Click += delegate
-            {
-                new SchoolCore.TeacherExtendControls.Ribbon.TeacherImportWizard().ShowDialog();
-            };
-
-            #endregion
-
-            //報表,是以常態呈現
-            rbItem["報表"].Size = RibbonBarButton.MenuButtonSize.Large;
-            rbItem["報表"].Image = Properties.Resources.paste_64;
-            rbItem["報表"].SupposeHasChildern = true;
-
-            #region RibbonBar 教師/指定
-            rbItem = Teacher.Instance.RibbonBarItems["指定"];
-            //rbItem["類別"].Image = InternalExtendControls.Tagging.Resources.ctxTag_Image;
-            //rbItem["類別"].Size = RibbonBarButton.MenuButtonSize.Medium;
-            //rbItem["類別"].SupposeHasChildern = true;
-            //rbItem["類別"].PopupOpen += new EventHandler<PopupOpenEventArgs>(
-            //    new TaggingMenu("JHSchool.Teacher.Ribbon0040", "JHSchool.Teacher.Ribbon0050").MenuOpen);
-
-            //rbItem = Teacher.Instance.RibbonBarItems["指定"];
-            //rbItem["授課"].Size = RibbonBarButton.MenuButtonSize.Large;
-            //rbItem["授課"].Image = TeacherExtendControls.Ribbon.Resources.btnAddTeacher_Image;
-            //rbItem["授課"].Click += delegate
-            //{
-
-            //};
-            #endregion
-
-            #region RibbonBar 教師/統計報表
-            //rbItem = Teacher.Instance.RibbonBarItems["統計報表"];
-            //rbItem["報表"].Size = RibbonBarButton.MenuButtonSize.Large;
-            //rbItem["報表"].Image = TeacherExtendControls.Ribbon.Resources.btnReport_Image;
-            //rbItem["報表"].Click += delegate
-            //{
-
-            //};
-            #endregion
-
-            #region RibbonBar 教師/其它
-            //rbItem = Teacher.Instance.RibbonBarItems["其它"];
-            //rbItem["修改歷程"].Size = RibbonBarButton.MenuButtonSize.Large;
-            //rbItem["修改歷程"].Image = TeacherExtendControls.Ribbon.Resources.btnHistory_Image;
-            //rbItem["修改歷程"].Click += delegate
-            //{
-
-            //};
-            #endregion
-
             ListPaneField idField = new ListPaneField("ID");
             idField.GetVariable += delegate(object sender, GetVariableEventArgs e)
             {
@@ -225,59 +160,9 @@ namespace SchoolCore
             //Teacher.Instance.AddView(new JHSchool.TeacherExtendControls.CategoryView());
             Present.NavPaneContexMenu.GetChild("重新整理").Click += delegate { this.SyncAllBackground(); };
 
-            // Teacher.Instance.AddDetailBulider(new SchoolCore.Legacy.ContentItemBulider<TeacherExtendControls.BaseInfoItem>());
-
-            #region 教師基本資料(20140502)
-            ITeacherDatailtemAPI BaseItem = FISCA.InteractionService.DiscoverAPI<ITeacherDatailtemAPI>();
-            if (BaseItem != null)
-            {
-                Teacher.Instance.AddDetailBulider(BaseItem.CreateBasicInfo());
-            }
-            else
-            {
-                Teacher.Instance.AddDetailBulider(new FISCA.Presentation.DetailBulider<JHSchool.TeacherExtendControls.BaseInfoItem>());
-            } 
-            #endregion
-
-
-            // Teacher.Instance.AddDetailBulider(new ContentItemBulider<TeacherExtendControls.BaseInfoItem>());
-//            Teacher.Instance.AddDetailBulider(new SchoolCore.Legacy.ContentItemBulider<TeacherExtendControls.TeachStudentItem>());
-
-            // 教師帶班班級
-            Teacher.Instance.AddDetailBulider(new FISCA.Presentation.DetailBulider<SchoolCore.TeacherExtendControls.TeachStudentItem>());
-
-            //電子報表(因相關功能未完成先註)
-            //Teacher.Instance.AddDetailBulider(new SchoolCore.Legacy.ContentItemBulider<TeacherExtendControls.ElectronicPaperPalmerworm>());
-            Teacher.Instance.AddDetailBulider(new SchoolCore.Legacy.ContentItemBulider<TeacherExtendControls.TeachCourseItem>());
-
-            //K12.Teacher.Instance.AddView(new ShowAllStudentsView());
-            //Teacher.Instance.RequiredDescription += delegate(object sender, RequiredDescriptionEventArgs e)
-            //{
-            //    var teacherRec = Teacher.Instance.Items[e.PrimaryKey];
-            //    e.Result = teacherRec.Name + ( string.IsNullOrEmpty(teacherRec.Nickname) ? "" : "(" + teacherRec.Nickname + ")" );
-            //};
-
-            #region 教師篩選功能
-
-
-
-            //private void CreateFilterItem(string name)
-            //{
-            //FilterMenu[name].AutoCheckOnClick = true;
-            //FilterMenu[name].AutoCollapseOnClick = false;
-
-            //FilterMenu[name].Checked = preference.GetBoolean(name, false);
-            //FilterMenu[name].Click += delegate
-            //{
-            //    FillFilter();
-            //    preference.SetBoolean(name, FilterMenu[name].Checked);
-
-            //    preference.SaveAsync();
-            //};
-            //}
+            Teacher.Instance.AddDetailBulider(new FISCA.Presentation.DetailBulider<SchoolCore.TeacherExtendControls.BaseInfoItem>());
 
             #endregion
-
             #region 增加導師搜尋條件鈕
 
             ConfigData cd = User.Configuration["TeacherSearchOptionPreference"];
@@ -324,18 +209,12 @@ namespace SchoolCore
 
 
             #endregion
-
-            //由類別模組提供
-            //Present.SetDescriptionPaneBulider(new DescriptionPaneBulider<JHSchool.TeacherExtendControls.TeacherDescription>());
-
+            
             #region 註冊權限管理
             Catalog ribbon = RoleAclSource.Instance["教師"]["功能按鈕"];
             ribbon.Add(new RibbonFeature("JHSchool.Teacher.Ribbon0000", "新增教師資料"));
             ribbon.Add(new RibbonFeature("JHSchool.Teacher.Ribbon0010", "刪除教師資料"));
-            ribbon.Add(new RibbonFeature("JHSchool.Teacher.Ribbon0020", "匯出教師資料"));
-            ribbon.Add(new RibbonFeature("JHSchool.Teacher.Ribbon0030", "匯入教師資料"));
-            //ribbon.Add(new RibbonFeature("JHSchool.Teacher.Ribbon0040", "指定教師類別"));
-            //ribbon.Add(new RibbonFeature("JHSchool.Teacher.Ribbon0050", "管理教師類別清單"));
+            
 
             Catalog detail = RoleAclSource.Instance["教師"]["資料項目"];
             detail.Add(new DetailItemFeature(typeof(TeacherExtendControls.BaseInfoItem)));            

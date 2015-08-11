@@ -24,7 +24,7 @@ namespace SchoolCore.Editor
         public string CalculationFlag { get; set; }
         internal CourseRecord Course { get; private set; }
 
-        public ClassRecord Class { get { return JHSchool.Class.Instance[RefClassID]; } set { RefClassID = (value == null ? "" : value.ID); } }
+        public ClassRecord Class { get { return SchoolCore.Class.Instance[RefClassID]; } set { RefClassID = (value == null ? "" : value.ID); } }
 
         /// <summary>
         /// 取得修改狀態

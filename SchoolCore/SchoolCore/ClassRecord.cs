@@ -36,7 +36,7 @@ namespace SchoolCore
         /// <summary>
         /// 取得班導師
         /// </summary>
-        public TeacherRecord Teacher { get { return Teacher.Instance.Items[RefTeacherID]; } }
+        public TeacherRecord Teacher { get { return SchoolCore.Teacher.Instance.Items[RefTeacherID]; } }
         /// <summary>
         /// 取得班級學生
         /// </summary>

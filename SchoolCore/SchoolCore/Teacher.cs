@@ -6,7 +6,7 @@ using System.ComponentModel;
 using Framework;
 using FISCA.Presentation;
 using System.Windows.Forms;
-using SchoolCore.Legacy;
+using SchoolCore;
 using System.Text.RegularExpressions;
 using SchoolCore.TeacherExtendControls.Ribbon;
 using Framework.Security;

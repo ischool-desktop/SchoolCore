@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using FISCA.Presentation;
 using Framework;
 using SchoolCore.Feature.Legacy;
-using SchoolCore.Legacy;
+using SchoolCore;
 using FCode = Framework.Security.FeatureCodeAttribute;
 //using K12.EduAdminDataMapping;
 

@@ -7,7 +7,7 @@ using System.IO;
 using System.Windows.Forms;
 using FISCA.Presentation;
 using Framework;
-using SchoolCore.Legacy;
+using SchoolCore;
 using K12.Data;
 using FCode = Framework.Security.FeatureCodeAttribute;
 
@@ -129,9 +129,8 @@ namespace SchoolCore.TeacherExtendControls
             cboAccountType.Text = _TeacherRec.AccountType;
 
             try
-            {
-                
-                pic1.Image = SchoolCore.Legacy.Photo.ConvertFromBase64Encoding(_TeacherRec.Photo, pic1.Width, pic1.Height);
+            {                
+                pic1.Image = SchoolCore.Photo.ConvertFromBase64Encoding(_TeacherRec.Photo, pic1.Width, pic1.Height);
             }
             catch (Exception)
             {
@@ -307,7 +306,7 @@ namespace SchoolCore.TeacherExtendControls
                     Bitmap newBmp = new Bitmap(orgBmp, pic1.Size);
                     pic1.Image = newBmp;
 
-                    _TeacherRec.Photo = ToBase64String(SchoolCore.Legacy.Photo.Resize(new Bitmap(orgBmp)));
+                    _TeacherRec.Photo = ToBase64String(SchoolCore.Photo.Resize(new Bitmap(orgBmp)));
                     K12.Data.Teacher.Update(_TeacherRec);
                     prlp.SaveLog("學籍系統-教師基本資料", "變更教師照片", "teacher", PrimaryKey, "變更教師:" + _TeacherRec.Name + "的照片");
                     DataBindToForm();

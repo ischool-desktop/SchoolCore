@@ -542,4 +542,4 @@
         private DevComponents.DotNetBar.ButtonItem buttonItem6;
         private DevComponents.Editors.ComboItem comboItem6;
     }
- }
+}

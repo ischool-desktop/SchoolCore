@@ -39,7 +39,7 @@ namespace SchoolCore
 
             stream.Seek(0, System.IO.SeekOrigin.Begin);
             new Aspose.Cells.License().SetLicense(stream);
-            stream.Seek(0, System.IO.SeekOrigin.Begin);
+            
 
             FISCA.LogAgent.ApplicationLog.Log("[特殊歷程]", "登入", string.Format("使用者{0}已登入系統", FISCA.Authentication.DSAServices.UserAccount));
 

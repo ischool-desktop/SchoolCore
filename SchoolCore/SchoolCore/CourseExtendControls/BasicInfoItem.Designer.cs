@@ -283,6 +283,7 @@
             this.MinimumSize = new System.Drawing.Size(550, 0);
             this.Name = "BasicInfoItem";
             this.Size = new System.Drawing.Size(550, 155);
+            this.Load += new System.EventHandler(this.BasicInfoItem_Load);
             this.ResumeLayout(false);
 
         }

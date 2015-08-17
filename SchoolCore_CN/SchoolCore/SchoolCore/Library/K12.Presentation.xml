@@ -4,6 +4,31 @@
         <name>K12.Presentation</name>
     </assembly>
     <members>
+        <member name="T:K12.Presentation.NLDPanels">
+            <summary>
+            基本页面
+            </summary>
+        </member>
+        <member name="P:K12.Presentation.NLDPanels.Student">
+            <summary>
+            学生页签
+            </summary>
+        </member>
+        <member name="P:K12.Presentation.NLDPanels.Teacher">
+            <summary>
+            教师页签
+            </summary>
+        </member>
+        <member name="P:K12.Presentation.NLDPanels.Class">
+            <summary>
+            班级页签
+            </summary>
+        </member>
+        <member name="P:K12.Presentation.NLDPanels.Course">
+            <summary>
+            课程页签
+            </summary>
+        </member>
         <member name="T:K12.Presentation.Properties.Resources">
             <summary>
               用於查詢當地語系化字串等的強型別資源類別
@@ -20,29 +45,114 @@
               使用這個強型別資源類別的資源查閱。
             </summary>
         </member>
-        <member name="T:K12.Presentation.NLDPanels">
+        <member name="M:K12.Presentation.SampleForm.WizardForm.OnPreviousButtonClick">
             <summary>
-            基本頁面
+            按了上一步
             </summary>
         </member>
-        <member name="P:K12.Presentation.NLDPanels.Student">
+        <member name="M:K12.Presentation.SampleForm.WizardForm.OnNextButtonClick">
             <summary>
-            學生頁籤
+            按了下一步
             </summary>
         </member>
-        <member name="P:K12.Presentation.NLDPanels.Teacher">
+        <member name="F:K12.Presentation.SampleForm.WizardForm.components">
             <summary>
-            教師頁籤
+            Required designer variable.
             </summary>
         </member>
-        <member name="P:K12.Presentation.NLDPanels.Class">
+        <member name="M:K12.Presentation.SampleForm.WizardForm.Dispose(System.Boolean)">
             <summary>
-            班級頁籤
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:K12.Presentation.SampleForm.WizardForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="P:K12.Presentation.NLDPanels.Course">
+        <member name="M:K12.Presentation.SampleForm.SelectClasses.SortClassByName(K12.Data.ClassRecord,K12.Data.ClassRecord)">
             <summary>
-            課程頁籤
+            依班級名稱排序
+            </summary>
+        </member>
+        <member name="F:K12.Presentation.SampleForm.SelectClasses.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:K12.Presentation.SampleForm.SelectClasses.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:K12.Presentation.SampleForm.SelectClasses.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:K12.Presentation.SampleForm.SelectDateRange">
+            <summary>
+            選擇日期區間
+            </summary>
+        </member>
+        <member name="F:K12.Presentation.SampleForm.SelectDateRange.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:K12.Presentation.SampleForm.SelectDateRange.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:K12.Presentation.SampleForm.SelectDateRange.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:K12.Presentation.SampleForm.SelectSchoolYear.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:K12.Presentation.SampleForm.SelectSchoolYear.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:K12.Presentation.SampleForm.SelectSchoolYear.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:K12.Presentation.SampleForm.SelectStudents.SortStudentBySeatNo(K12.Data.StudentRecord,K12.Data.StudentRecord)">
+            <summary>
+            依班級座號排序
+            </summary>
+        </member>
+        <member name="F:K12.Presentation.SampleForm.SelectStudents.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:K12.Presentation.SampleForm.SelectStudents.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:K12.Presentation.SampleForm.SelectStudents.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
             </summary>
         </member>
     </members>

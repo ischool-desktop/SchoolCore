@@ -360,7 +360,7 @@
     <Content Include="Library\K12.Data.xml" />
     <Content Include="Library\K12.Presentation.dll" />
     <Content Include="Library\K12.Presentation.pdb" />
-    <Content Include="Library\K12.Presentation.xml" />
+    <Content Include="Library\K12.Presentation.XML" />
     <Content Include="Library\SmartSchool.API.PlugIn.dll" />
     <Content Include="Library\SmartSchool.API.PlugIn.pdb" />
     <Content Include="Library\SmartSchool.Common.dll" />

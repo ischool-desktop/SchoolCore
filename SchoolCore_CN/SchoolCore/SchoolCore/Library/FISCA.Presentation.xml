@@ -245,38 +245,38 @@
         </member>
         <member name="M:FISCA.Presentation.DotNetBar.PrivateControl.NavContentPresentation.splitterListDetial_ExpandedChanged(System.Object,DevComponents.DotNetBar.ExpandedChangeEventArgs)">
             <summary>
-            設定縮放
+            设定缩放
             </summary>
         </member>
         <member name="M:FISCA.Presentation.DotNetBar.PrivateControl.NavContentPresentation.splitterListDetial_ExpandedChanging(System.Object,DevComponents.DotNetBar.ExpandedChangeEventArgs)">
             <summary>
-            設定設定縮放
+            设定设定缩放
             </summary>
         </member>
         <member name="M:FISCA.Presentation.DotNetBar.PrivateControl.NavContentPresentation.SetFocus(System.Object,System.EventArgs)">
             <summary>
-            設定焦點
+            设定焦点
             </summary>
         </member>
         <member name="F:FISCA.Presentation.DotNetBar.PrivateControl.NavContentPresentation._SearchDelegates">
             <summary>
-            當使用者按下搜尋按鍵時。
+            当用户按下搜寻按键时。
             </summary>
         </member>
         <member name="F:FISCA.Presentation.DotNetBar.PrivateControl.NavContentPresentation.components">
             <summary> 
-            設計工具所需的變數。
+            设计工具所需的变数。
             </summary>
         </member>
         <member name="M:FISCA.Presentation.DotNetBar.PrivateControl.NavContentPresentation.Dispose(System.Boolean)">
             <summary> 
-            清除任何使用中的資源。
+            清除任何使用中的资源。
             </summary>
-            <param name="disposing">如果應該公開 Managed 資源則為 true，否則為 false。</param>
+            <param name="disposing">如果应该公开 Managed 资源则为 true，否则为 false。</param>
         </member>
         <member name="M:FISCA.Presentation.DotNetBar.PrivateControl.NavContentPresentation.InitializeComponent">
              <summary> 
-             此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改這個方法的內容。
+             此为设计工具支持所需的方法 - 请勿使用程序代码编辑器修改这个方法的内容。
             
              </summary>
         </member>
@@ -457,7 +457,7 @@
         </member>
         <member name="T:FISCA.Presentation.MenuButton">
             <summary>
-            選單按紐
+            选单按纽
             </summary>
         </member>
         <member name="M:FISCA.Presentation.MenuButton.GetImage">
@@ -474,136 +474,136 @@
         </member>
         <member name="M:FISCA.Presentation.MenuButton.Lock(System.String)">
             <summary>
-            鎖定此按紐，除非呼叫UnLock並傳入相同Password否則無法編輯此按紐
+            锁定此按纽，除非呼叫UnLock并传入相同Password否则无法编辑此按纽
             </summary>
-            <param name="password">密碼</param>
+            <param name="password">密码</param>
         </member>
         <member name="M:FISCA.Presentation.MenuButton.UnLock(System.String)">
             <summary>
-            解除鎖定此按紐
+            解除锁定此按纽
             </summary>
-            <param name="password">密碼</param>
+            <param name="password">密码</param>
         </member>
         <member name="M:FISCA.Presentation.MenuButton.GetChild(System.String)">
             <summary>
-            建立子選單按紐或取得已存在的按紐
+            建立子选单按纽或取得已存在的按纽
             </summary>
-            <param name="text">子選單按紐名稱</param>
-            <returns>子選單按紐</returns>
+            <param name="text">子选单按纽名称</param>
+            <returns>子选单按纽</returns>
         </member>
         <member name="M:FISCA.Presentation.MenuButton.GetChild(System.String[])">
             <summary>
-            建立子選單按紐或取得已存在的按紐
+            建立子选单按纽或取得已存在的按纽
             </summary>
-            <param name="paths">子選單按紐路徑</param>
-            <returns>子選單按紐</returns>
+            <param name="paths">子选单按纽路径</param>
+            <returns>子选单按纽</returns>
         </member>
         <member name="M:FISCA.Presentation.MenuButton.SetLayout(System.Xml.Linq.XElement)">
             <summary>
-            內部 API，不建議呼叫。
+            内部 API，不建议呼叫。
             </summary>
             <param name="description"></param>
         </member>
         <member name="P:FISCA.Presentation.MenuButton.AutoCheckOnClick">
             <summary>
-            取得或設定，指出是否在點擊時自動改變Checked屬性
+            取得或设定，指出是否在点击时自动改变Checked属性
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButton.AutoCollapseOnClick">
             <summary>
-            取得或設定，指出是否在點擊時自動收合選單
+            取得或设定，指出是否在点击时自动收合选单
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButton.BeginGroup">
             <summary>
-            取得或設定，指出是否在選單按紐上方增加一條分格線
+            取得或设定，指出是否在选单按纽上方增加一条分网格线
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButton.Checked">
             <summary>
-            取得或設定，指出是否已選取
+            取得或设定，指出是否已选取
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButton.Enable">
             <summary>
-            取得或設定，指出是否啟用按紐
+            取得或设定，指出是否启用按纽
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButton.Image">
             <summary>
-            取得或設定，鈕控上顯示的影像
+            取得或设定，钮控上显示的影像
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButton.Text">
             <summary>
-            取得或設定，指出按紐顯示的文字
+            取得或设定，指出按纽显示的文字
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButton.Visible">
             <summary>
-            取得或設定，指出是否顯示按紐
+            取得或设定，指出是否显示按纽
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButton.Tag">
             <summary>
-            取得或設定，其包含控制項相關資料
+            取得或设定，其包含控件相关数据
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButton.SubItemStatus">
             <summary>
-            不會是 Null。
+            不会是 Null。
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButton.SupposeHasChildern">
             <summary>
-            取得或設定，永遠以包含子項目的方式顯示
+            取得或设定，永远以包含子项目的方式显示
             </summary>
         </member>
         <member name="E:FISCA.Presentation.MenuButton.Click">
             <summary>
-            當按下按紐時。
+            当按下按纽时。
             </summary>
         </member>
         <member name="E:FISCA.Presentation.MenuButton.CheckedChanged">
             <summary>
-            當Checked暑性變更時
+            当Checked暑性变更时
             </summary>
         </member>
         <member name="E:FISCA.Presentation.MenuButton.PopupOpen">
             <summary>
-            當子選單開啟時
+            当子选单开启时
             </summary>
         </member>
         <member name="E:FISCA.Presentation.MenuButton.PopupClose">
             <summary>
-            當子選單關閉時
+            当子选单关闭时
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButton.Items">
             <summary>
-            取得子選單按紐集合
+            取得子选单按纽集合
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButton.Item(System.String)">
             <summary>
-            建立子選單按紐或取得已存在的按紐
+            建立子选单按纽或取得已存在的按纽
             </summary>
-            <param name="text">子選單按紐名稱</param>
-            <returns>子選單按紐</returns>
+            <param name="text">子选单按纽名称</param>
+            <returns>子选单按纽</returns>
         </member>
         <member name="P:FISCA.Presentation.MenuButton.LayoutPath">
             <summary>
-            內部 API，不建議呼叫。
+            内部 API，不建议呼叫。
             </summary>
         </member>
         <member name="T:FISCA.Presentation.PopupOpenEventArgs">
             <summary>
-            包含PopupOpen事件的資料
+            包含PopupOpen事件的资料
             </summary>
         </member>
         <member name="M:FISCA.Presentation.PopupOpenEventArgs.#ctor">
             <summary>
-            建構子
+            建构子
             </summary>
         </member>
         <member name="P:FISCA.Presentation.PopupOpenEventArgs.Cancel">
@@ -613,11 +613,11 @@
         </member>
         <member name="P:FISCA.Presentation.PopupOpenEventArgs.VirtualButtons">
             <summary>
-            虛擬按鈕
+            虚拟按钮
             </summary>
             <remarks>
-            對VirtualButtons加入子項目，新加入的子項目會加入在展開後的子項目的最末，並於收合時移除。
-            可以應用於在選單開啟時動態決定項目的情境。
+            对VirtualButtons加入子项目，新加入的子项目会加入在展开后的子项目的最末，并于收合时移除。
+            可以应用于在选单开启时动态决定项目的情境。
             </remarks>
         </member>
         <member name="M:FISCA.Presentation.DotNetBar.PrivateControl.MotherForm.SetLayout(System.Xml.Linq.XElement)">
@@ -628,24 +628,24 @@
         </member>
         <member name="F:FISCA.Presentation.DotNetBar.PrivateControl.MotherForm.components">
             <summary>
-            設計工具所需的變數。
+            设计工具所需的变数。
             </summary>
         </member>
         <member name="M:FISCA.Presentation.DotNetBar.PrivateControl.MotherForm.Dispose(System.Boolean)">
             <summary>
-            清除任何使用中的資源。
+            清除任何使用中的资源。
             </summary>
-            <param name="disposing">如果應該公開 Managed 資源則為 true，否則為 false。</param>
+            <param name="disposing">如果应该公开 Managed 资源则为 true，否则为 false。</param>
         </member>
         <member name="M:FISCA.Presentation.DotNetBar.PrivateControl.MotherForm.InitializeComponent">
              <summary>
-             此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改這個方法的內容。
+             此为设计工具支持所需的方法 - 请勿使用程序代码编辑器修改这个方法的内容。
             
              </summary>
         </member>
         <member name="E:FISCA.Presentation.DotNetBar.PrivateControl.MotherForm.TabGotFocus">
             <summary>
-            當 Tab Click 時發生。
+            当 Tab Click 时发生。
             </summary>
         </member>
         <member name="T:FISCA.Presentation.MenuButtonControl">
@@ -655,101 +655,101 @@
         </member>
         <member name="M:FISCA.Presentation.MenuButtonControl.Lock(System.String)">
             <summary>
-            鎖定此按紐，除非呼叫UnLock並傳入相同Password否則無法編輯此按紐
+            锁定此按纽，除非呼叫UnLock并传入相同Password否则无法编辑此按纽
             </summary>
-            <param name="password">密碼</param>
+            <param name="password">密码</param>
         </member>
         <member name="M:FISCA.Presentation.MenuButtonControl.UnLock(System.String)">
             <summary>
-            解除鎖定此按紐
+            解除锁定此按纽
             </summary>
-            <param name="password">密碼</param>
+            <param name="password">密码</param>
         </member>
         <member name="M:FISCA.Presentation.MenuButtonControl.GetChild(System.String)">
             <summary>
-            建立子選單按紐或取得已存在的按紐
+            建立子选单按纽或取得已存在的按纽
             </summary>
-            <param name="text">子選單按紐名稱</param>
-            <returns>子選單按紐</returns>
+            <param name="text">子选单按纽名称</param>
+            <returns>子选单按纽</returns>
         </member>
         <member name="M:FISCA.Presentation.MenuButtonControl.GetChild(System.String[])">
             <summary>
-            建立子選單按紐或取得已存在的按紐
+            建立子选单按纽或取得已存在的按纽
             </summary>
-            <param name="paths">子選單按紐路徑</param>
-            <returns>子選單按紐</returns>
+            <param name="paths">子选单按纽路径</param>
+            <returns>子选单按纽</returns>
         </member>
         <member name="P:FISCA.Presentation.MenuButtonControl.AutoCheckOnClick">
             <summary>
-            取得或設定，指出是否在點擊時自動改變Checked屬性
+            取得或设定，指出是否在点击时自动改变Checked属性
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButtonControl.Checked">
             <summary>
-            取得或設定，指出是否已選取
+            取得或设定，指出是否已选取
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButtonControl.Enable">
             <summary>
-            取得或設定，指出是否啟用按紐
+            取得或设定，指出是否启用按纽
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButtonControl.Image">
             <summary>
-            取得或設定，鈕控上顯示的影像
+            取得或设定，钮控上显示的影像
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButtonControl.Text">
             <summary>
-            取得或設定，指出按紐顯示的文字
+            取得或设定，指出按纽显示的文字
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButtonControl.Visible">
             <summary>
-            取得或設定，指出是否顯示按紐
+            取得或设定，指出是否显示按纽
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButtonControl.SupposeHasChildern">
             <summary>
-            取得或設定，永遠以包含子項目的方式顯示
+            取得或设定，永远以包含子项目的方式显示
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButtonControl.Tag">
             <summary>
-            取得或設定，其包含控制項相關資料
+            取得或设定，其包含控件相关数据
             </summary>
         </member>
         <member name="E:FISCA.Presentation.MenuButtonControl.Click">
             <summary>
-            當按下按紐時。
+            当按下按纽时。
             </summary>
         </member>
         <member name="E:FISCA.Presentation.MenuButtonControl.CheckedChanged">
             <summary>
-            當Checked暑性變更時
+            当Checked暑性变更时
             </summary>
         </member>
         <member name="E:FISCA.Presentation.MenuButtonControl.PopupOpen">
             <summary>
-            當子選單開啟時
+            当子选单开启时
             </summary>
         </member>
         <member name="E:FISCA.Presentation.MenuButtonControl.PopupClose">
             <summary>
-            當子選單關閉時
+            当子选单关闭时
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButtonControl.SubItems">
             <summary>
-            取得子選單按紐集合
+            取得子选单按纽集合
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MenuButtonControl.Item(System.String)">
             <summary>
-            建立子選單按紐或取得已存在的按紐
+            建立子选单按纽或取得已存在的按纽
             </summary>
-            <param name="text">子選單按紐名稱</param>
-            <returns>子選單按紐</returns>
+            <param name="text">子选单按纽名称</param>
+            <returns>子选单按纽</returns>
         </member>
         <member name="T:FISCA.Presentation.XPreferenceProvider">
             <summary>
@@ -811,7 +811,7 @@
         </member>
         <member name="T:FISCA.Presentation.MotherForm">
             <summary>
-            系統主視窗
+            系统主窗口
             </summary>
         </member>
         <member name="M:FISCA.Presentation.MotherForm.AddPanel(FISCA.Presentation.INCPanel)">
@@ -828,25 +828,25 @@
         </member>
         <member name="M:FISCA.Presentation.MotherForm.SetStatusBarMessage(System.String)">
             <summary>
-            顯示文字於下方狀態列
+            显示文字于下方状态栏
             </summary>
             <param name="text">文字</param>
         </member>
         <member name="M:FISCA.Presentation.MotherForm.SetStatusBarMessage(System.String,System.Int32)">
             <summary>
-            顯示文字及進度條於下方狀態列
+            显示文字及进度条于下方状态栏
             </summary>
             <param name="text">文字</param>
-            <param name="progress">進度</param>
+            <param name="progress">进度</param>
         </member>
         <member name="M:FISCA.Presentation.MotherForm.SuspendLayout">
             <summary>
-            暫止 Layout 配置。
+            暂止 Layout 配置。
             </summary>
         </member>
         <member name="M:FISCA.Presentation.MotherForm.ResumeLayout(System.Xml.Linq.XElement)">
             <summary>
-            復原 Layout 配置。
+            复原 Layout 配置。
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MotherForm.Form">
@@ -866,53 +866,53 @@
         </member>
         <member name="P:FISCA.Presentation.MotherForm.StartMenu">
             <summary>
-            取得開始按紐的選單
+            取得开始按纽的选单
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MotherForm.XPreferenceProvider">
             <summary>
-            取得或設定使用者喜好值提供者(XLinq 版本)。
+            取得或设定使用者喜好值提供者(XLinq 版本)。
             </summary>
         </member>
         <member name="E:FISCA.Presentation.MotherForm.TabGotFocus">
             <summary>
-            當某個 Tab 取得焦點時發生。
+            当某个 Tab 取得焦点时发生。
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MotherForm.LazyOrders">
             <summary>
-            延遲決定順序的物件集合。
+            延迟决定顺序的对象集合。
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MotherForm.IsLayoutSuspended">
             <summary>
-            取得目前 Layout Engine 是否處於暫停配置。
+            取得目前 Layout Engine 是否处于暂停配置。
             </summary>
         </member>
         <member name="E:FISCA.Presentation.MotherForm.LayoutResumed">
             <summary>
-            當 Layout 恢復時。
+            当 Layout 恢复时。
             </summary>
         </member>
         <member name="P:FISCA.Presentation.MotherForm.PreferenceProvider">
             <summary>
-            取得或設定，使用者設定資料的處理器
+            取得或设定，用户设定资料的处理器
             </summary>
         </member>
         <member name="F:FISCA.Presentation.DotNetBar.PrivateControl.NavContentDivision.components">
             <summary> 
-            設計工具所需的變數。
+            设计工具所需的变数。
             </summary>
         </member>
         <member name="M:FISCA.Presentation.DotNetBar.PrivateControl.NavContentDivision.Dispose(System.Boolean)">
             <summary> 
-            清除任何使用中的資源。
+            清除任何使用中的资源。
             </summary>
-            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+            <param name="disposing">如果应该处置 Managed 资源则为 true，否则为 false。</param>
         </member>
         <member name="M:FISCA.Presentation.DotNetBar.PrivateControl.NavContentDivision.InitializeComponent">
              <summary>
-             此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改這個方法的內容。
+             此为设计工具支持所需的方法 - 请勿使用程序代码编辑器修改这个方法的内容。
             
              </summary>
         </member>
@@ -1207,152 +1207,152 @@
         </member>
         <member name="T:FISCA.Presentation.ListPaneField">
             <summary>
-            擴充NavContentPresentation的ListPane中的顯示欄位
+            扩充NavContentPresentation的ListPane中的显示字段
             </summary>
         </member>
         <member name="M:FISCA.Presentation.ListPaneField.OnPreloadValue(FISCA.Presentation.PreloadVariableEventArgs)">
             <summary>
-            引發PreloadVariable事件
+            引发PreloadVariable事件
             </summary>
-            <param name="args">包含事件的資料</param>
+            <param name="args">包含事件的资料</param>
         </member>
         <member name="M:FISCA.Presentation.ListPaneField.OnPreloadVariableBackground(FISCA.Presentation.PreloadVariableEventArgs)">
             <summary>
-            引發PreloadVariableBackground事件
+            引发PreloadVariableBackground事件
             </summary>
-            <param name="args">包含事件的資料</param>
+            <param name="args">包含事件的资料</param>
         </member>
         <member name="M:FISCA.Presentation.ListPaneField.OnGetVariable(FISCA.Presentation.GetVariableEventArgs)">
             <summary>
-            引發GetVariable事件
+            引发GetVariable事件
             </summary>
-            <param name="args">包含事件的資料</param>
+            <param name="args">包含事件的资料</param>
         </member>
         <member name="M:FISCA.Presentation.ListPaneField.OnCompareValue(FISCA.Presentation.CompareValueEventArgs)">
             <summary>
-            引發CompareValue事件
+            引发CompareValue事件
             </summary>
-            <param name="args">包含事件的資料</param>
+            <param name="args">包含事件的资料</param>
         </member>
         <member name="M:FISCA.Presentation.ListPaneField.Reload">
             <summary>
-            重新整裡此欄位顯示的內容
+            重新整里此字段显示的内容
             </summary>
         </member>
         <member name="M:FISCA.Presentation.ListPaneField.#ctor(System.String)">
             <summary>
-            建構子，傳入欄位標題
+            建构子，传入字段标题
             </summary>
-            <param name="columnHeaderText">欄位標題</param>
+            <param name="columnHeaderText">字段标题</param>
         </member>
         <member name="M:FISCA.Presentation.ListPaneField.#ctor(System.Windows.Forms.DataGridViewColumn)">
             <summary>
-            建構子，傳入資料行
+            建构子，传入资料行
             </summary>
-            <param name="column">資料行</param>
+            <param name="column">资料行</param>
         </member>
         <member name="M:FISCA.Presentation.ListPaneField.#ctor(System.String,System.Boolean)">
             <summary>
-            建構子，傳入欄位標題，及是否永遠顯示
+            建构子，传入字段标题，及是否永远显示
             </summary>
-            <param name="columnHeaderText">欄位標題</param>
-            <param name="allwaysVisible">是否永遠顯示</param>
+            <param name="columnHeaderText">字段标题</param>
+            <param name="allwaysVisible">是否永远显示</param>
         </member>
         <member name="M:FISCA.Presentation.ListPaneField.#ctor(System.Windows.Forms.DataGridViewColumn,System.Boolean)">
             <summary>
-            建構子，傳入資料行，及是否永遠顯示
+            建构子，传入资料行，及是否永远显示
             </summary>
-            <param name="column">資料行</param>
-            <param name="allwaysVisible">是否永遠顯示</param>
+            <param name="column">资料行</param>
+            <param name="allwaysVisible">是否永远显示</param>
         </member>
         <member name="P:FISCA.Presentation.ListPaneField.MinimumWidth">
             <summary>
-            取得或設定，此資料行的最小行寬
+            取得或设定，此数据行的最小行宽
             </summary>
         </member>
         <member name="P:FISCA.Presentation.ListPaneField.AllwaysVisible">
              <summary>
-            取得，指出是否永遠顯示資料行，true的話將不受使用者自訂顯示欄位功能影響
+            取得，指出是否永远显示数据行，true的话将不受用户自定义显示字段功能影响
              </summary>
         </member>
         <member name="P:FISCA.Presentation.ListPaneField.Column">
             <summary>
-            取得延伸資料的資料行
+            取得延伸数据的数据行
             </summary>
         </member>
         <member name="E:FISCA.Presentation.ListPaneField.VariableChanged">
             <summary>
-            當顯示的資料發生變動
+            当显示的数据发生变动
             </summary>
         </member>
         <member name="E:FISCA.Presentation.ListPaneField.PreloadVariable">
             <summary>
-            當顯示資料即將變更，載入新資料
+            当显示数据即将变更，加载新资料
             </summary>
         </member>
         <member name="E:FISCA.Presentation.ListPaneField.PreloadVariableBackground">
             <summary>
-            當顯示資料即將變更，於背景執行續載入新資料
+            当显示数据即将变更，于背景执行续加载新资料
             </summary>
         </member>
         <member name="E:FISCA.Presentation.ListPaneField.GetVariable">
             <summary>
-            取得要顯示的內容
+            取得要显示的内容
             </summary>
         </member>
         <member name="E:FISCA.Presentation.ListPaneField.CompareValue">
             <summary>
-            比較資料大小
+            比较数据大小
             </summary>
         </member>
         <member name="T:FISCA.Presentation.PreloadVariableEventArgs">
             <summary>
-            提供PreloadVariable事件的資料
+            提供PreloadVariable事件的数据
             </summary>
         </member>
         <member name="P:FISCA.Presentation.PreloadVariableEventArgs.Keys">
             <summary>
-            取得預先載入的資料的集合
+            取得预先加载的数据的集合
             </summary>
         </member>
         <member name="T:FISCA.Presentation.GetVariableEventArgs">
             <summary>
-            提供GetVariable事件的資料
+            提供GetVariable事件的数据
             </summary>
         </member>
         <member name="P:FISCA.Presentation.GetVariableEventArgs.Key">
             <summary>
-            取得資料的ID
+            取得资料的ID
             </summary>
         </member>
         <member name="P:FISCA.Presentation.GetVariableEventArgs.Value">
             <summary>
-            取得或設定，此ID要顯示的值
+            取得或设定，此ID要显示的值
             </summary>
         </member>
         <member name="P:FISCA.Presentation.GetVariableEventArgs.Tooltip">
             <summary>
-            取得或設定，此欄的Tooltip描述
+            取得或设定，此栏的Tooltip描述
             </summary>
         </member>
         <member name="T:FISCA.Presentation.CompareValueEventArgs">
             <summary>
-            提供CompareValue事件的資料
+            提供CompareValue事件的数据
             </summary>
         </member>
         <member name="P:FISCA.Presentation.CompareValueEventArgs.Value1">
             <summary>
-            取得第一個資料
+            取得第一个资料
             </summary>
         </member>
         <member name="P:FISCA.Presentation.CompareValueEventArgs.Value2">
             <summary>
-            取得第二個資料
+            取得第二个资料
             </summary>
         </member>
         <member name="P:FISCA.Presentation.CompareValueEventArgs.Result">
             <summary>
-            取得或設定，若第一比資料大於第二比資料則大於0，第一比資料小於第二比資料則小於0，第一比資料等於第二比資料則等於0
+            取得或设定，若第一比数据大于第二比数据则大于0，第一比数据小于第二比数据则小于0，第一比资料等于第二比资料则等于0
             </summary>
         </member>
         <member name="T:FISCA.Presentation.NLDPanel">

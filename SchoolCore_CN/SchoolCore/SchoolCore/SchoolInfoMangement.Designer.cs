@@ -461,7 +461,7 @@
             this.intSchoolYear.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
             this.intSchoolYear.FreeTextEntryMode = true;
             this.intSchoolYear.Location = new System.Drawing.Point(249, 10);
-            this.intSchoolYear.MaxValue = 999;
+            this.intSchoolYear.MaxValue = 9999;
             this.intSchoolYear.MinValue = 90;
             this.intSchoolYear.Name = "intSchoolYear";
             this.intSchoolYear.ShowUpDown = true;
@@ -481,7 +481,7 @@
             this.intSemester.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
             this.intSemester.FreeTextEntryMode = true;
             this.intSemester.Location = new System.Drawing.Point(365, 10);
-            this.intSemester.MaxValue = 2;
+            this.intSemester.MaxValue = 99;
             this.intSemester.MinValue = 1;
             this.intSemester.Name = "intSemester";
             this.intSemester.ShowUpDown = true;

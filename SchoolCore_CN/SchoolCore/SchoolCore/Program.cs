@@ -36,10 +36,15 @@ namespace SchoolCore
 
             //设定 ASPOSE 组件的 License。
             System.IO.Stream stream = new System.IO.MemoryStream(Properties.Resources.Aspose_Total);
-
+            
+            stream.Seek(0, System.IO.SeekOrigin.Begin);
+            new Aspose.Words.License().SetLicense(stream);
             stream.Seek(0, System.IO.SeekOrigin.Begin);
             new Aspose.Cells.License().SetLicense(stream);
-
+            stream.Seek(0, System.IO.SeekOrigin.Begin);
+            new Aspose.BarCode.License().SetLicense(stream);
+            stream.Seek(0, System.IO.SeekOrigin.Begin);
+            new Aspose.Pdf.License().SetLicense(stream);
 
             FISCA.LogAgent.ApplicationLog.Log("[特殊历程]", "登入", string.Format("用户{0}已登入系统", FISCA.Authentication.DSAServices.UserAccount));
 

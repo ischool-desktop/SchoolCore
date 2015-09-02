@@ -10,7 +10,7 @@ using SchoolCore;
 
 namespace StudentExtension_CN
 {
-    [FCode("JHSchool.Student.Detail0090", "班级信息")]
+    [FCode("JHSchool.Student.Detail0090", "班級信息")]
     public partial class ClassItem : FISCA.Presentation.DetailContent
     {
         private ChangeListener DataListener { get; set; }
@@ -34,7 +34,7 @@ namespace StudentExtension_CN
         {
             InitializeComponent();
 
-            Group = "班级信息";
+            Group = "班級信息";
         }
 
         void ClassItem_Disposed(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace StudentExtension_CN
             _AllStudRecList = K12.Data.Student.SelectAll();
             _studRecList.Clear();
 
-            // 有条件加入一般状态学生与有班级座号学生
+            // 有條件加入一般狀態學生與有班級座號學生
             foreach (K12.Data.StudentRecord studRec in _AllStudRecList)
                 if (studRec.Class != null)
                     if (studRec.Status == K12.Data.StudentRecord.StudentStatus.一般 && studRec.SeatNo.HasValue)
@@ -113,7 +113,7 @@ namespace StudentExtension_CN
             cboSeatNo.Text = string.Empty;
             this._DefaultSeatNo = string.Empty;
 
-            // 当有座号
+            // 當有座號
             if (objStudent.SeatNo.HasValue)
                 if (objStudent.SeatNo.Value > 0)
                 {
@@ -124,7 +124,7 @@ namespace StudentExtension_CN
                 }
 
 
-            // 当有学号
+            // 當有學號
             if (string.IsNullOrEmpty(objStudent.StudentNumber))
             {
                 this._DefaultStudNum = string.Empty;
@@ -136,9 +136,9 @@ namespace StudentExtension_CN
                 this._DefaultStudNum = objStudent.StudentNumber;
             }
 
-            prlp.SetBeforeSaveText("班级", cboClass.Text);
-            prlp.SetBeforeSaveText("座号", cboSeatNo.Text);
-            prlp.SetBeforeSaveText("学号", txtStudentNumber.Text);
+            prlp.SetBeforeSaveText("班級", cboClass.Text);
+            prlp.SetBeforeSaveText("座號", cboSeatNo.Text);
+            prlp.SetBeforeSaveText("學號", txtStudentNumber.Text);
 
             tmpClassName = cboClass.Text;
             setClassName();
@@ -165,7 +165,7 @@ namespace StudentExtension_CN
                 BGWork.RunWorkerAsync();
 
         }
-        #region IDetailBulider 成员
+        #region IDetailBulider 成員
 
         public DetailContent GetContent()
         {
@@ -175,7 +175,7 @@ namespace StudentExtension_CN
         #endregion
 
 
-        // 设定班级
+        // 設定班級
         private void setClassName()
         {
             cboClass.Items.Clear();
@@ -198,7 +198,7 @@ namespace StudentExtension_CN
             Errors.Clear();
         }
 
-        // 设定座号
+        // 設定座號
         private void setClassNo()
         {
             _ClassSeatNoList.Clear();
@@ -240,7 +240,7 @@ namespace StudentExtension_CN
 
             if (chkClassName() == false)
             {
-                Errors.SetError(cboClass, "班级名称错误!");
+                Errors.SetError(cboClass, "班級名稱錯誤!");
                 return;
             }
 
@@ -249,54 +249,54 @@ namespace StudentExtension_CN
 
             if (tmpSeatNo < 1 && cboSeatNo.Text.Trim() != "")
             {
-                Errors.SetError(cboSeatNo, "学生座号错误!");
+                Errors.SetError(cboSeatNo, "學生座號錯誤!");
                 return;
             }
 
-            // 检查班级座号是否重复
+            // 檢查班級座號是否重複
             if (tmpSeatNo > 0)
                 if (_ClassSeatNoList.Contains(tmpSeatNo))
                 {
-                    // 是否是自己原本座号
+                    // 是否是自己原本座號
                     if (this._DefaultSeatNo != cboSeatNo.Text.Trim())
                     {
-                        Errors.SetError(cboSeatNo, "座号重复!");
+                        Errors.SetError(cboSeatNo, "座號重複!");
                         return;
                     }
                 }
 
-            // 更改学生班级
+            // 更改學生班級
             if (_ClassNameIDDic.ContainsKey(cboClass.Text))
             {
                 objStudent.RefClassID = _ClassNameIDDic[cboClass.Text];
             }
 
-            // 当选空白时
+            // 當選空白時
             if ((cboClass.Text == "" && cboSeatNo.Text == "") || cboClass.Text == "<空白>")
             {
                 objStudent.RefClassID = null;
             }
 
-            // 检查学号是否重复
+            // 檢查學號是否重複
             if (txtStudentNumber.Text != this._DefaultStudNum)
             {
-                // 判断是否是空
+                // 判斷是否是空
                 if (string.IsNullOrEmpty(txtStudentNumber.Text))
                     objStudent.StudentNumber = "";
                 else
                 {
-                    // 取得目前学生状态
+                    // 取得目前學生狀態
                     K12.Data.StudentRecord.StudentStatus studtStatus = K12.Data.Student.SelectByID(PrimaryKey).Status;
 
                     List<string> checkData = new List<string>();
-                    // 同状态下学号不能重复
+                    // 同狀態下學號不能重複
                     foreach (K12.Data.StudentRecord studRec in K12.Data.Student.SelectAll())
                         if (studRec.Status == studtStatus)
                             checkData.Add(studRec.StudentNumber);
 
                     if (checkData.Contains(txtStudentNumber.Text))
                     {
-                        Errors.SetError(txtStudentNumber, "学号重复!");
+                        Errors.SetError(txtStudentNumber, "學號重複!");
                         return;
                     }
                     objStudent.StudentNumber = txtStudentNumber.Text;
@@ -312,12 +312,12 @@ namespace StudentExtension_CN
             SaveButtonVisible = false;
             CancelButtonVisible = false;
 
-            prlp.SetAfterSaveText("班级", cboClass.Text);
-            prlp.SetAfterSaveText("座号", cboSeatNo.Text);
-            prlp.SetAfterSaveText("学号", txtStudentNumber.Text);
-            prlp.SetActionBy("学籍", "学生班级信息");
-            prlp.SetAction("修改学生班级信息");
-            prlp.SetDescTitle("学生姓名:" + objStudent.Name + ",学号:" + objStudent.StudentNumber + ",");
+            prlp.SetAfterSaveText("班級", cboClass.Text);
+            prlp.SetAfterSaveText("座號", cboSeatNo.Text);
+            prlp.SetAfterSaveText("學號", txtStudentNumber.Text);
+            prlp.SetActionBy("學籍", "學生班級資訊");
+            prlp.SetAction("修改學生班級資訊");
+            prlp.SetDescTitle("學生姓名:" + objStudent.Name + ",學號:" + objStudent.StudentNumber + ",");
 
             prlp.SaveLog("", "", "student", PrimaryKey);
 
@@ -403,4 +403,5 @@ namespace StudentExtension_CN
 
     }
 }
+
 

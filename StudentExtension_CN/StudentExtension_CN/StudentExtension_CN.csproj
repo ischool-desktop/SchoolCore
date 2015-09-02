@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=4.3.0.0, Culture=neutral, PublicKeyToken=9a40d5a4b59e5256, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Aspose.Cells.dll</HintPath>
+    </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Library\DevComponents.DotNetBar2.dll</HintPath>
@@ -166,15 +170,44 @@
     <Compile Include="ClassItem.Designer.cs">
       <DependentUpon>ClassItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\StudentData.cs" />
+    <Compile Include="ExportStudentData.cs" />
+    <Compile Include="ParentInfoItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParentInfoItem.Designer.cs">
+      <DependentUpon>ParentInfoItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ClassItem.resx">
       <DependentUpon>ClassItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClassItem.zh-CN.resx">
+      <DependentUpon>ClassItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassItem.zh-TW.resx">
+      <DependentUpon>ClassItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentInfoItem.resx">
+      <DependentUpon>ParentInfoItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Library\Aspose.Cells.dll" />
+    <Content Include="Library\Aspose.Cells.xml" />
     <Content Include="Library\DevComponents.DotNetBar2.dll" />
     <Content Include="Library\DevComponents.DotNetBar2.xml" />
     <Content Include="Library\FISCA.Authentication.dll" />
@@ -240,7 +273,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\FISCA.dll.config" />
+    <None Include="Template\StudentData.xls" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

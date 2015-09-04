@@ -53,22 +53,34 @@
             // 
             // txtFatherName
             // 
+            resources.ApplyResources(this.txtFatherName, "txtFatherName");
             // 
             // 
             // 
             this.txtFatherName.Border.Class = "TextBoxBorder";
             this.txtFatherName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            resources.ApplyResources(this.txtFatherName, "txtFatherName");
+            this.txtFatherName.ButtonCustom.DisplayPosition = ((int)(resources.GetObject("txtFatherName.ButtonCustom.DisplayPosition")));
+            this.txtFatherName.ButtonCustom.Image = ((System.Drawing.Image)(resources.GetObject("txtFatherName.ButtonCustom.Image")));
+            this.txtFatherName.ButtonCustom.Text = resources.GetString("txtFatherName.ButtonCustom.Text");
+            this.txtFatherName.ButtonCustom2.DisplayPosition = ((int)(resources.GetObject("txtFatherName.ButtonCustom2.DisplayPosition")));
+            this.txtFatherName.ButtonCustom2.Image = ((System.Drawing.Image)(resources.GetObject("txtFatherName.ButtonCustom2.Image")));
+            this.txtFatherName.ButtonCustom2.Text = resources.GetString("txtFatherName.ButtonCustom2.Text");
             this.txtFatherName.Name = "txtFatherName";
             // 
             // txtFatherPhone
             // 
+            resources.ApplyResources(this.txtFatherPhone, "txtFatherPhone");
             // 
             // 
             // 
             this.txtFatherPhone.Border.Class = "TextBoxBorder";
             this.txtFatherPhone.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            resources.ApplyResources(this.txtFatherPhone, "txtFatherPhone");
+            this.txtFatherPhone.ButtonCustom.DisplayPosition = ((int)(resources.GetObject("txtFatherPhone.ButtonCustom.DisplayPosition")));
+            this.txtFatherPhone.ButtonCustom.Image = ((System.Drawing.Image)(resources.GetObject("txtFatherPhone.ButtonCustom.Image")));
+            this.txtFatherPhone.ButtonCustom.Text = resources.GetString("txtFatherPhone.ButtonCustom.Text");
+            this.txtFatherPhone.ButtonCustom2.DisplayPosition = ((int)(resources.GetObject("txtFatherPhone.ButtonCustom2.DisplayPosition")));
+            this.txtFatherPhone.ButtonCustom2.Image = ((System.Drawing.Image)(resources.GetObject("txtFatherPhone.ButtonCustom2.Image")));
+            this.txtFatherPhone.ButtonCustom2.Text = resources.GetString("txtFatherPhone.ButtonCustom2.Text");
             this.txtFatherPhone.Name = "txtFatherPhone";
             // 
             // labelX1
@@ -83,12 +95,18 @@
             // 
             // txtMotherPhone
             // 
+            resources.ApplyResources(this.txtMotherPhone, "txtMotherPhone");
             // 
             // 
             // 
             this.txtMotherPhone.Border.Class = "TextBoxBorder";
             this.txtMotherPhone.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            resources.ApplyResources(this.txtMotherPhone, "txtMotherPhone");
+            this.txtMotherPhone.ButtonCustom.DisplayPosition = ((int)(resources.GetObject("txtMotherPhone.ButtonCustom.DisplayPosition")));
+            this.txtMotherPhone.ButtonCustom.Image = ((System.Drawing.Image)(resources.GetObject("txtMotherPhone.ButtonCustom.Image")));
+            this.txtMotherPhone.ButtonCustom.Text = resources.GetString("txtMotherPhone.ButtonCustom.Text");
+            this.txtMotherPhone.ButtonCustom2.DisplayPosition = ((int)(resources.GetObject("txtMotherPhone.ButtonCustom2.DisplayPosition")));
+            this.txtMotherPhone.ButtonCustom2.Image = ((System.Drawing.Image)(resources.GetObject("txtMotherPhone.ButtonCustom2.Image")));
+            this.txtMotherPhone.ButtonCustom2.Text = resources.GetString("txtMotherPhone.ButtonCustom2.Text");
             this.txtMotherPhone.Name = "txtMotherPhone";
             // 
             // labelX2
@@ -103,12 +121,18 @@
             // 
             // txtMotherName
             // 
+            resources.ApplyResources(this.txtMotherName, "txtMotherName");
             // 
             // 
             // 
             this.txtMotherName.Border.Class = "TextBoxBorder";
             this.txtMotherName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            resources.ApplyResources(this.txtMotherName, "txtMotherName");
+            this.txtMotherName.ButtonCustom.DisplayPosition = ((int)(resources.GetObject("txtMotherName.ButtonCustom.DisplayPosition")));
+            this.txtMotherName.ButtonCustom.Image = ((System.Drawing.Image)(resources.GetObject("txtMotherName.ButtonCustom.Image")));
+            this.txtMotherName.ButtonCustom.Text = resources.GetString("txtMotherName.ButtonCustom.Text");
+            this.txtMotherName.ButtonCustom2.DisplayPosition = ((int)(resources.GetObject("txtMotherName.ButtonCustom2.DisplayPosition")));
+            this.txtMotherName.ButtonCustom2.Image = ((System.Drawing.Image)(resources.GetObject("txtMotherName.ButtonCustom2.Image")));
+            this.txtMotherName.ButtonCustom2.Text = resources.GetString("txtMotherName.ButtonCustom2.Text");
             this.txtMotherName.Name = "txtMotherName";
             // 
             // labelX3
@@ -133,12 +157,18 @@
             // 
             // txtAddress
             // 
+            resources.ApplyResources(this.txtAddress, "txtAddress");
             // 
             // 
             // 
             this.txtAddress.Border.Class = "TextBoxBorder";
             this.txtAddress.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            resources.ApplyResources(this.txtAddress, "txtAddress");
+            this.txtAddress.ButtonCustom.DisplayPosition = ((int)(resources.GetObject("txtAddress.ButtonCustom.DisplayPosition")));
+            this.txtAddress.ButtonCustom.Image = ((System.Drawing.Image)(resources.GetObject("txtAddress.ButtonCustom.Image")));
+            this.txtAddress.ButtonCustom.Text = resources.GetString("txtAddress.ButtonCustom.Text");
+            this.txtAddress.ButtonCustom2.DisplayPosition = ((int)(resources.GetObject("txtAddress.ButtonCustom2.DisplayPosition")));
+            this.txtAddress.ButtonCustom2.Image = ((System.Drawing.Image)(resources.GetObject("txtAddress.ButtonCustom2.Image")));
+            this.txtAddress.ButtonCustom2.Text = resources.GetString("txtAddress.ButtonCustom2.Text");
             this.txtAddress.Name = "txtAddress";
             // 
             // ParentInfoItem

@@ -33,9 +33,17 @@ namespace StudentExtension_CN
 
            };
 
+           // 家長資訊
+           Catalog catalog1a = RoleAclSource.Instance["学生"]["項目"];
+           catalog1a.Add(new RibbonFeature("JHSchool.Student.Detail0090", "班級信息"));
+           catalog1a.Add(new RibbonFeature("StudentExtension_CN_ParentInfoItem", "家長資訊"));
+
            // 学生基本资料
            Catalog catalog1b = RoleAclSource.Instance["学生"]["功能按钮"];
            catalog1b.Add(new RibbonFeature("StudentExtension_CN_ExportStudentData", "学生基本资料"));
+                       
+
+
         }
     }
 }

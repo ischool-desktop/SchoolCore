@@ -12,9 +12,18 @@ namespace StudentExtension_CN
     {
         [ApplicationMain()]
         static public void Main()
-        {
+        {            
             // 班級資訊
            SchoolCore.Student.Instance.AddDetailBulider(new DetailBulider<StudentExtension_CN.ClassItem>());
+
+            // 家長資訊
+           SchoolCore.Student.Instance.AddDetailBulider(new DetailBulider<StudentExtension_CN.ParentInfoItem>());
+
+            // 權限註冊         
+           Catalog catalog1 = RoleAclSource.Instance["学生"]["数据项"];
+           catalog1.Add(new DetailItemFeature("JHSchool.Student.Detail0090", "班級信息"));
+           catalog1.Add(new DetailItemFeature("StudentExtension_CN_ParentInfoItem", "家长信息"));
+
 
            RibbonBarItem rbItem2 = MotherForm.RibbonBarItems["学生", "资料统计"];
            rbItem2["导出"]["学生基本资料"].Enable = UserAcl.Current["StudentExtension_CN_ExportStudentData"].Executable;
@@ -33,15 +42,10 @@ namespace StudentExtension_CN
 
            };
 
-           // 家長資訊
-           Catalog catalog1a = RoleAclSource.Instance["学生"]["項目"];
-           catalog1a.Add(new RibbonFeature("JHSchool.Student.Detail0090", "班級信息"));
-           catalog1a.Add(new RibbonFeature("StudentExtension_CN_ParentInfoItem", "家長資訊"));
 
            // 学生基本资料
            Catalog catalog1b = RoleAclSource.Instance["学生"]["功能按钮"];
            catalog1b.Add(new RibbonFeature("StudentExtension_CN_ExportStudentData", "学生基本资料"));
-                       
 
 
         }

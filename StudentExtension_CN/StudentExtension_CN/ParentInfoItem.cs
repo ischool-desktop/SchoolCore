@@ -10,7 +10,7 @@ using K12.Data;
 
 namespace StudentExtension_CN
 {
-     [FCode("StudentExtension_CN_ParentInfoItem", "家長資訊")]
+     [FCode("StudentExtension_CN_ParentInfoItem", "家长信息")]
     public partial class ParentInfoItem : FISCA.Presentation.DetailContent
     {
         private ChangeListener _DataListener { get; set; }
@@ -28,7 +28,7 @@ namespace StudentExtension_CN
             _BGWork.DoWork += _BGWork_DoWork;
             _BGWork.RunWorkerCompleted += _BGWork_RunWorkerCompleted;
             InitializeComponent();
-            Group = "家長資訊";
+            Group = "家长信息";
 
             _DataListener = new ChangeListener();
             _DataListener.Add(new TextBoxSource(txtAddress));
@@ -69,11 +69,11 @@ namespace StudentExtension_CN
             this.Loading = true;
             SaveButtonVisible = false;
             CancelButtonVisible = false;
-            txtAddress.Text = "";
-            txtFatherName.Text = "";
-            txtFatherPhone.Text = "";
-            txtMotherName.Text = "";
-            txtMotherPhone.Text = "";
+            //txtAddress.Text = "";
+            //txtFatherName.Text = "";
+            //txtFatherPhone.Text = "";
+            //txtMotherName.Text = "";
+            //txtMotherPhone.Text = "";
 
             if (_BGWork.IsBusy)
                 _isBwBusy = true;
@@ -92,6 +92,7 @@ namespace StudentExtension_CN
             txtMotherPhone.Text = _ParentRecord.MotherPhone;
             _DataListener.Reset();
             _DataListener.ResumeListen();
+
             this.Loading = false;
         }
 
@@ -117,7 +118,7 @@ namespace StudentExtension_CN
             }
             catch (Exception ex)
             {
-                FISCA.Presentation.Controls.MsgBox.Show("家長資訊," + ex.Message);
+                FISCA.Presentation.Controls.MsgBox.Show("家长信息," + ex.Message);
             }
 
             SaveButtonVisible = false;

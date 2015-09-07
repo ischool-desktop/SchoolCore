@@ -3,14 +3,14 @@
     partial class ParentInfoItem
     {
         /// <summary> 
-        /// 設計工具所需的變數。
+        /// 设计工具所需的变数。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary> 
-        /// 清除任何使用中的資源。
+        /// 清除任何使用中的资源。
         /// </summary>
-        /// <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        /// <param name="disposing">如果应该处置 Managed 资源则为 true，否则为 false。</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,15 +20,14 @@
             base.Dispose(disposing);
         }
 
-        #region 元件設計工具產生的程式碼
+        #region 组件设计工具产生的程序代码
 
         /// <summary> 
-        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
-        /// 修改這個方法的內容。
+        /// 此为设计工具支持所需的方法 - 请勿使用程序代码编辑器
+        /// 修改这个方法的内容。
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParentInfoItem));
             this.lb1 = new DevComponents.DotNetBar.LabelX();
             this.txtFatherName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtFatherPhone = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -43,137 +42,137 @@
             // 
             // lb1
             // 
-            resources.ApplyResources(this.lb1, "lb1");
+            this.lb1.AutoSize = true;
             // 
             // 
             // 
             this.lb1.BackgroundStyle.Class = "";
             this.lb1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lb1.Location = new System.Drawing.Point(19, 28);
             this.lb1.Name = "lb1";
+            this.lb1.Size = new System.Drawing.Size(60, 21);
+            this.lb1.TabIndex = 0;
+            this.lb1.Text = "父亲姓名";
             // 
             // txtFatherName
             // 
-            resources.ApplyResources(this.txtFatherName, "txtFatherName");
             // 
             // 
             // 
             this.txtFatherName.Border.Class = "TextBoxBorder";
             this.txtFatherName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtFatherName.ButtonCustom.DisplayPosition = ((int)(resources.GetObject("txtFatherName.ButtonCustom.DisplayPosition")));
-            this.txtFatherName.ButtonCustom.Image = ((System.Drawing.Image)(resources.GetObject("txtFatherName.ButtonCustom.Image")));
-            this.txtFatherName.ButtonCustom.Text = resources.GetString("txtFatherName.ButtonCustom.Text");
-            this.txtFatherName.ButtonCustom2.DisplayPosition = ((int)(resources.GetObject("txtFatherName.ButtonCustom2.DisplayPosition")));
-            this.txtFatherName.ButtonCustom2.Image = ((System.Drawing.Image)(resources.GetObject("txtFatherName.ButtonCustom2.Image")));
-            this.txtFatherName.ButtonCustom2.Text = resources.GetString("txtFatherName.ButtonCustom2.Text");
+            this.txtFatherName.Location = new System.Drawing.Point(85, 26);
             this.txtFatherName.Name = "txtFatherName";
+            this.txtFatherName.Size = new System.Drawing.Size(159, 25);
+            this.txtFatherName.TabIndex = 0;
             // 
             // txtFatherPhone
             // 
-            resources.ApplyResources(this.txtFatherPhone, "txtFatherPhone");
             // 
             // 
             // 
             this.txtFatherPhone.Border.Class = "TextBoxBorder";
             this.txtFatherPhone.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtFatherPhone.ButtonCustom.DisplayPosition = ((int)(resources.GetObject("txtFatherPhone.ButtonCustom.DisplayPosition")));
-            this.txtFatherPhone.ButtonCustom.Image = ((System.Drawing.Image)(resources.GetObject("txtFatherPhone.ButtonCustom.Image")));
-            this.txtFatherPhone.ButtonCustom.Text = resources.GetString("txtFatherPhone.ButtonCustom.Text");
-            this.txtFatherPhone.ButtonCustom2.DisplayPosition = ((int)(resources.GetObject("txtFatherPhone.ButtonCustom2.DisplayPosition")));
-            this.txtFatherPhone.ButtonCustom2.Image = ((System.Drawing.Image)(resources.GetObject("txtFatherPhone.ButtonCustom2.Image")));
-            this.txtFatherPhone.ButtonCustom2.Text = resources.GetString("txtFatherPhone.ButtonCustom2.Text");
+            this.txtFatherPhone.Location = new System.Drawing.Point(325, 26);
             this.txtFatherPhone.Name = "txtFatherPhone";
+            this.txtFatherPhone.Size = new System.Drawing.Size(205, 25);
+            this.txtFatherPhone.TabIndex = 1;
             // 
             // labelX1
             // 
-            resources.ApplyResources(this.labelX1, "labelX1");
+            this.labelX1.AutoSize = true;
             // 
             // 
             // 
             this.labelX1.BackgroundStyle.Class = "";
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Location = new System.Drawing.Point(259, 28);
             this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(60, 21);
+            this.labelX1.TabIndex = 2;
+            this.labelX1.Text = "父亲电话";
             // 
             // txtMotherPhone
             // 
-            resources.ApplyResources(this.txtMotherPhone, "txtMotherPhone");
             // 
             // 
             // 
             this.txtMotherPhone.Border.Class = "TextBoxBorder";
             this.txtMotherPhone.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMotherPhone.ButtonCustom.DisplayPosition = ((int)(resources.GetObject("txtMotherPhone.ButtonCustom.DisplayPosition")));
-            this.txtMotherPhone.ButtonCustom.Image = ((System.Drawing.Image)(resources.GetObject("txtMotherPhone.ButtonCustom.Image")));
-            this.txtMotherPhone.ButtonCustom.Text = resources.GetString("txtMotherPhone.ButtonCustom.Text");
-            this.txtMotherPhone.ButtonCustom2.DisplayPosition = ((int)(resources.GetObject("txtMotherPhone.ButtonCustom2.DisplayPosition")));
-            this.txtMotherPhone.ButtonCustom2.Image = ((System.Drawing.Image)(resources.GetObject("txtMotherPhone.ButtonCustom2.Image")));
-            this.txtMotherPhone.ButtonCustom2.Text = resources.GetString("txtMotherPhone.ButtonCustom2.Text");
+            this.txtMotherPhone.Location = new System.Drawing.Point(326, 63);
             this.txtMotherPhone.Name = "txtMotherPhone";
+            this.txtMotherPhone.Size = new System.Drawing.Size(205, 25);
+            this.txtMotherPhone.TabIndex = 3;
             // 
             // labelX2
             // 
-            resources.ApplyResources(this.labelX2, "labelX2");
+            this.labelX2.AutoSize = true;
             // 
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(260, 65);
             this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(60, 21);
+            this.labelX2.TabIndex = 6;
+            this.labelX2.Text = "母亲电话";
             // 
             // txtMotherName
             // 
-            resources.ApplyResources(this.txtMotherName, "txtMotherName");
             // 
             // 
             // 
             this.txtMotherName.Border.Class = "TextBoxBorder";
             this.txtMotherName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMotherName.ButtonCustom.DisplayPosition = ((int)(resources.GetObject("txtMotherName.ButtonCustom.DisplayPosition")));
-            this.txtMotherName.ButtonCustom.Image = ((System.Drawing.Image)(resources.GetObject("txtMotherName.ButtonCustom.Image")));
-            this.txtMotherName.ButtonCustom.Text = resources.GetString("txtMotherName.ButtonCustom.Text");
-            this.txtMotherName.ButtonCustom2.DisplayPosition = ((int)(resources.GetObject("txtMotherName.ButtonCustom2.DisplayPosition")));
-            this.txtMotherName.ButtonCustom2.Image = ((System.Drawing.Image)(resources.GetObject("txtMotherName.ButtonCustom2.Image")));
-            this.txtMotherName.ButtonCustom2.Text = resources.GetString("txtMotherName.ButtonCustom2.Text");
+            this.txtMotherName.Location = new System.Drawing.Point(86, 63);
             this.txtMotherName.Name = "txtMotherName";
+            this.txtMotherName.Size = new System.Drawing.Size(159, 25);
+            this.txtMotherName.TabIndex = 2;
             // 
             // labelX3
             // 
-            resources.ApplyResources(this.labelX3, "labelX3");
+            this.labelX3.AutoSize = true;
             // 
             // 
             // 
             this.labelX3.BackgroundStyle.Class = "";
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Location = new System.Drawing.Point(20, 65);
             this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(60, 21);
+            this.labelX3.TabIndex = 4;
+            this.labelX3.Text = "母亲姓名";
             // 
             // labelX4
             // 
-            resources.ApplyResources(this.labelX4, "labelX4");
+            this.labelX4.AutoSize = true;
             // 
             // 
             // 
             this.labelX4.BackgroundStyle.Class = "";
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Location = new System.Drawing.Point(20, 103);
             this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(60, 21);
+            this.labelX4.TabIndex = 8;
+            this.labelX4.Text = "联络地址";
             // 
             // txtAddress
             // 
-            resources.ApplyResources(this.txtAddress, "txtAddress");
             // 
             // 
             // 
             this.txtAddress.Border.Class = "TextBoxBorder";
             this.txtAddress.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtAddress.ButtonCustom.DisplayPosition = ((int)(resources.GetObject("txtAddress.ButtonCustom.DisplayPosition")));
-            this.txtAddress.ButtonCustom.Image = ((System.Drawing.Image)(resources.GetObject("txtAddress.ButtonCustom.Image")));
-            this.txtAddress.ButtonCustom.Text = resources.GetString("txtAddress.ButtonCustom.Text");
-            this.txtAddress.ButtonCustom2.DisplayPosition = ((int)(resources.GetObject("txtAddress.ButtonCustom2.DisplayPosition")));
-            this.txtAddress.ButtonCustom2.Image = ((System.Drawing.Image)(resources.GetObject("txtAddress.ButtonCustom2.Image")));
-            this.txtAddress.ButtonCustom2.Text = resources.GetString("txtAddress.ButtonCustom2.Text");
+            this.txtAddress.Location = new System.Drawing.Point(86, 103);
             this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(445, 25);
+            this.txtAddress.TabIndex = 4;
             // 
             // ParentInfoItem
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.labelX4);
@@ -205,3 +204,4 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtAddress;
     }
 }
+

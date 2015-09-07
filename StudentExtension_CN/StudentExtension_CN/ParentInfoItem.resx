@@ -123,37 +123,36 @@
   <data name="&gt;&gt;txtAddress.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ParentInfoItem</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="labelX1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtAddress.ButtonCustom2.DisplayPosition" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtFatherName.ButtonCustom.Text" xml:space="preserve">
     <value />
   </data>
+  <data name="&gt;&gt;txtMotherPhone.Name" xml:space="preserve">
+    <value>txtMotherPhone</value>
+  </data>
   <data name="lb1.Text" xml:space="preserve">
     <value>父親姓名</value>
   </data>
-  <data name="&gt;&gt;txtMotherPhone.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="txtFatherName.ButtonCustom2.DisplayPosition" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;labelX3.Type" xml:space="preserve">
     <value>DevComponents.DotNetBar.LabelX, DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lb1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;labelX1.Type" xml:space="preserve">
     <value>DevComponents.DotNetBar.LabelX, DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04</value>
   </data>
-  <data name="txtFatherName.ButtonCustom2.DisplayPosition" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="txtMotherPhone.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelX2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 21</value>
   </data>
   <data name="&gt;&gt;lb1.Type" xml:space="preserve">
     <value>DevComponents.DotNetBar.LabelX, DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04</value>
@@ -164,12 +163,6 @@
   <data name="&gt;&gt;labelX4.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="txtFatherName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>85, 26</value>
-  </data>
-  <data name="lb1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;lb1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -179,18 +172,13 @@
   <data name="&gt;&gt;labelX4.Name" xml:space="preserve">
     <value>labelX4</value>
   </data>
-  <data name="txtFatherPhone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 25</value>
-  </data>
   <data name="&gt;&gt;txtMotherName.Type" xml:space="preserve">
     <value>DevComponents.DotNetBar.Controls.TextBoxX, DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04</value>
   </data>
   <data name="&gt;&gt;txtFatherName.Type" xml:space="preserve">
     <value>DevComponents.DotNetBar.Controls.TextBoxX, DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04</value>
   </data>
-  <data name="lb1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 28</value>
-  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 17</value>
   </data>
@@ -210,8 +198,8 @@
   <data name="labelX4.Location" type="System.Drawing.Point, System.Drawing">
     <value>46, 103</value>
   </data>
-  <data name="txtAddress.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="txtFatherPhone.ButtonCustom2.DisplayPosition" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtFatherName.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -219,11 +207,11 @@
   <data name="&gt;&gt;txtMotherPhone.Type" xml:space="preserve">
     <value>DevComponents.DotNetBar.Controls.TextBoxX, DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04</value>
   </data>
-  <data name="labelX4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;txtAddress.Type" xml:space="preserve">
+    <value>DevComponents.DotNetBar.Controls.TextBoxX, DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04</value>
   </data>
-  <data name="&gt;&gt;labelX2.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="txtAddress.ButtonCustom2.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="txtMotherPhone.ButtonCustom.DisplayPosition" type="System.Int32, mscorlib">
     <value>0</value>
@@ -234,11 +222,11 @@
   <data name="&gt;&gt;txtFatherName.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="txtFatherPhone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 26</value>
+  <data name="&gt;&gt;labelX1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;txtMotherName.Name" xml:space="preserve">
-    <value>txtMotherName</value>
+  <data name="lb1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 28</value>
   </data>
   <data name="txtMotherPhone.ButtonCustom2.Text" xml:space="preserve">
     <value />
@@ -288,14 +276,20 @@
   <data name="txtMotherName.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;txtAddress.Type" xml:space="preserve">
-    <value>DevComponents.DotNetBar.Controls.TextBoxX, DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04</value>
+  <data name="labelX1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 28</value>
+  </data>
+  <data name="txtFatherName.ButtonCustom.DisplayPosition" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>FISCA.Presentation.DetailContent, FISCA.Presentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="labelX1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;labelX3.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;labelX2.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="txtMotherPhone.ButtonCustom.Text" xml:space="preserve">
     <value />
@@ -303,26 +297,26 @@
   <data name="&gt;&gt;labelX2.Name" xml:space="preserve">
     <value>labelX2</value>
   </data>
-  <data name="&gt;&gt;labelX1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="&gt;&gt;txtFatherPhone.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="labelX2.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="txtAddress.ButtonCustom.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="txtFatherPhone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>325, 26</value>
+  </data>
+  <data name="txtMotherPhone.ButtonCustom.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="txtFatherPhone.ButtonCustom2.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="lb1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="txtFatherPhone.ButtonCustom.DisplayPosition" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;txtMotherPhone.Name" xml:space="preserve">
-    <value>txtMotherPhone</value>
+  <data name="labelX2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 21</value>
   </data>
   <data name="labelX4.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 21</value>
@@ -330,14 +324,14 @@
   <data name="labelX1.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 21</value>
   </data>
-  <data name="&gt;&gt;lb1.Name" xml:space="preserve">
-    <value>lb1</value>
-  </data>
   <data name="txtAddress.Location" type="System.Drawing.Point, System.Drawing">
     <value>86, 103</value>
   </data>
   <data name="txtAddress.ButtonCustom.DisplayPosition" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="txtMotherName.ButtonCustom.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;labelX4.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -351,8 +345,8 @@
   <data name="&gt;&gt;lb1.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="txtFatherPhone.ButtonCustom2.DisplayPosition" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="txtFatherPhone.ButtonCustom2.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="&gt;&gt;txtMotherName.Parent" xml:space="preserve">
     <value>$this</value>
@@ -381,11 +375,11 @@
   <data name="&gt;&gt;labelX1.Name" xml:space="preserve">
     <value>labelX1</value>
   </data>
+  <data name="&gt;&gt;txtFatherName.Name" xml:space="preserve">
+    <value>txtFatherName</value>
+  </data>
   <data name="txtFatherName.ButtonCustom.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
-  </data>
-  <data name="txtFatherName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 25</value>
   </data>
   <data name="txtMotherName.ButtonCustom.DisplayPosition" type="System.Int32, mscorlib">
     <value>0</value>
@@ -393,8 +387,8 @@
   <data name="txtMotherPhone.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 25</value>
   </data>
-  <data name="&gt;&gt;labelX2.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;labelX2.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="txtAddress.ButtonCustom.Text" xml:space="preserve">
     <value />
@@ -408,38 +402,44 @@
   <data name="txtMotherName.Location" type="System.Drawing.Point, System.Drawing">
     <value>86, 63</value>
   </data>
-  <data name="txtFatherName.ButtonCustom.DisplayPosition" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="txtAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
   <data name="labelX3.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 21</value>
   </data>
+  <data name="txtFatherName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 25</value>
+  </data>
   <data name="labelX2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="txtAddress.ButtonCustom2.DisplayPosition" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;txtMotherName.Name" xml:space="preserve">
+    <value>txtMotherName</value>
   </data>
-  <data name="labelX1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="labelX4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="labelX1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>259, 28</value>
-  </data>
-  <data name="txtFatherPhone.ButtonCustom2.Text" xml:space="preserve">
-    <value />
   </data>
   <data name="labelX4.Text" xml:space="preserve">
     <value>地址</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>FISCA.Presentation.DetailContent, FISCA.Presentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="txtMotherName.ButtonCustom.Text" xml:space="preserve">
+  <data name="txtAddress.ButtonCustom.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="txtAddress.ButtonCustom2.Text" xml:space="preserve">
+  <data name="txtFatherPhone.ButtonCustom2.Text" xml:space="preserve">
     <value />
+  </data>
+  <data name="&gt;&gt;txtMotherPhone.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ParentInfoItem</value>
+  </data>
+  <data name="&gt;&gt;labelX3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lb1.Name" xml:space="preserve">
+    <value>lb1</value>
   </data>
   <data name="txtMotherPhone.ButtonCustom2.DisplayPosition" type="System.Int32, mscorlib">
     <value>0</value>
@@ -447,22 +447,16 @@
   <data name="&gt;&gt;txtMotherName.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="txtMotherPhone.ButtonCustom.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="txtFatherPhone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 25</value>
   </data>
   <data name="&gt;&gt;labelX2.Type" xml:space="preserve">
     <value>DevComponents.DotNetBar.LabelX, DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04</value>
   </data>
-  <data name="&gt;&gt;txtFatherName.Name" xml:space="preserve">
-    <value>txtFatherName</value>
+  <data name="txtFatherName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 26</value>
   </data>
-  <data name="&gt;&gt;labelX1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;labelX1.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>zh-TW</value>
-  </metadata>
 </root>

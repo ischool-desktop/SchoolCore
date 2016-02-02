@@ -26,8 +26,8 @@ namespace StudentExtension_CN
 
 
            RibbonBarItem rbItem2 = MotherForm.RibbonBarItems["学生", "资料统计"];
-           rbItem2["导出"]["学生基本资料"].Enable = UserAcl.Current["StudentExtension_CN_ExportStudentData"].Executable;
-           rbItem2["导出"]["学生基本资料"].Click += delegate
+           rbItem2["汇出"]["汇出学生基本资料"].Enable = UserAcl.Current["StudentExtension_CN_ExportStudentData"].Executable;
+           rbItem2["汇出"]["汇出学生基本资料"].Click += delegate
            {
                if (K12.Presentation.NLDPanels.Student.SelectedSource.Count > 0)
                {
@@ -45,7 +45,7 @@ namespace StudentExtension_CN
 
            // 学生基本资料
            Catalog catalog1b = RoleAclSource.Instance["学生"]["功能按钮"];
-           catalog1b.Add(new RibbonFeature("StudentExtension_CN_ExportStudentData", "学生基本资料"));
+           catalog1b.Add(new RibbonFeature("StudentExtension_CN_ExportStudentData", "汇出学生基本资料"));
 
 
         }

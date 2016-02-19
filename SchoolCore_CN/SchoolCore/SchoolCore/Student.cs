@@ -236,7 +236,7 @@ namespace SchoolCore
                     string msg = string.Format("确定要删除「{0}」？", studRec.Name);
                     if (FISCA.Presentation.Controls.MsgBox.Show(msg, "删除学生", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        // 检查删除状态是否有同学号或身分证号,空白可删
+                        // 检查删除状态是否有同学号或身份证号,空白可删
                         List<string> tmpSnumList = new List<string>();
                         List<string> tmpStudIDNumberList = new List<string>();
                         foreach (K12.Data.StudentRecord checkStudRec in K12.Data.Student.SelectAll())
@@ -250,7 +250,7 @@ namespace SchoolCore
 
                         if (tmpSnumList.Contains(studRec.StudentNumber) || tmpSnumList.Contains(studRec.IDNumber))
                         {
-                            MsgBox.Show("删除状态有重复学号或身分证号,请先修改后再删除!");
+                            MsgBox.Show("删除状态有重复学号或身份证号,请先修改后再删除!");
                             return;
                         }
 
@@ -381,13 +381,13 @@ namespace SchoolCore
             };
             Student.Instance.AddListPaneField(birthday);
 
-            ListPaneField IDNumber = new ListPaneField("身分证号");
+            ListPaneField IDNumber = new ListPaneField("身份证号");
             IDNumber.GetVariable += delegate(object sender, GetVariableEventArgs e)
             {
                 if (Student.Instance.Items[e.Key] != null)
                     e.Value = Student.Instance.Items[e.Key].IDNumber;
             };
-            if (User.Acl["Student.Field.身分证号"].Executable)
+            if (User.Acl["Student.Field.身份证号"].Executable)
                 Student.Instance.AddListPaneField(IDNumber);
 
             #endregion
@@ -456,7 +456,7 @@ namespace SchoolCore
                 async.RunWorkerAsync(cd);
             };
 
-            SearchStudentIDNumber = SearchConditionMenu["身分证号"];
+            SearchStudentIDNumber = SearchConditionMenu["身份证号"];
             SearchStudentIDNumber.AutoCheckOnClick = true;
             SearchStudentIDNumber.AutoCollapseOnClick = false;
             SearchStudentIDNumber.Checked = cd.GetBoolean("SearchStudentIDNumber", true);
@@ -558,9 +558,9 @@ namespace SchoolCore
             //电子报表(因相关功能未完成先注)
             //detail.Add(new DetailItemFeature(typeof(StudentExtendControls.ElectronicPaperPalmerworm)));
 
-            //Student.Field.身分证号
+            //Student.Field.身份证号
             ribbon = RoleAclSource.Instance["学生"]["清单字段"];
-            ribbon.Add(new RibbonFeature("Student.Field.身分证号", "身分证号"));
+            ribbon.Add(new RibbonFeature("Student.Field.身份证号", "身份证号"));
             #endregion
 
             //#region 待删除毕业及离校

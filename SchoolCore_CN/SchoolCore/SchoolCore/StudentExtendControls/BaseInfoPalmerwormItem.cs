@@ -167,7 +167,7 @@ namespace SchoolCore.StudentExtendControls
                 {
                     if (_defaultIDNumber != _StudRec.IDNumber)
                     {
-                        _errors.SetError(txtSSN, "身分证号重复，请确认数据。");
+                        _errors.SetError(txtSSN, "身份证号重复，请确认数据。");
                         return;
                     }
                 }
@@ -262,7 +262,7 @@ namespace SchoolCore.StudentExtendControls
         private void SetBeforeEditLog()
         {
             prlp.SetBeforeSaveText("姓名", txtName.Text);
-            prlp.SetBeforeSaveText("身分证号", txtSSN.Text);
+            prlp.SetBeforeSaveText("身份证号", txtSSN.Text);
             prlp.SetBeforeSaveText("生日", txtBirthDate.Text);
             prlp.SetBeforeSaveText("性别", cboGender.Text);
             prlp.SetBeforeSaveText("国籍", cboNationality.Text);
@@ -275,7 +275,7 @@ namespace SchoolCore.StudentExtendControls
         private void SetAfterEditLog()
         {
             prlp.SetAfterSaveText("姓名", txtName.Text);
-            prlp.SetAfterSaveText("身分证号", txtSSN.Text);
+            prlp.SetAfterSaveText("身份证号", txtSSN.Text);
             prlp.SetAfterSaveText("生日", txtBirthDate.Text);
             prlp.SetAfterSaveText("性别", cboGender.Text);
             prlp.SetAfterSaveText("国籍", cboNationality.Text);
@@ -521,7 +521,7 @@ namespace SchoolCore.StudentExtendControls
             }
 
             if (QueryStudent.IDNumberExists(PrimaryKey, txtSSN.Text))
-                _errors.SetError(txtSSN, "身分证号重复，请确认数据。");
+                _errors.SetError(txtSSN, "身份证号重复，请确认数据。");
 
         }
 

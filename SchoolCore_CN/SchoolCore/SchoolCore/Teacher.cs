@@ -132,17 +132,17 @@ namespace SchoolCore
             };
             Teacher.Instance.AddListPaneField(superviseClassField);
 
-            // 加入身分证号,联络电话的权限管理
-            ListPaneField IDNumberField = new ListPaneField("身分证号");
+            // 加入身份证号,联络电话的权限管理
+            ListPaneField IDNumberField = new ListPaneField("身份证号");
             IDNumberField.GetVariable += delegate(object sender, GetVariableEventArgs e)
             {
                 e.Value = Items[e.Key].IDNumber;
             };
-            if (User.Acl["Teacher.Field.身分证号"].Executable)
+            if (User.Acl["Teacher.Field.身份证号"].Executable)
                 Present.AddListPaneField(IDNumberField);
 
             Catalog ribbonField = RoleAclSource.Instance["教师"]["清单字段"];
-            ribbonField.Add(new RibbonFeature("Teacher.Field.身分证号", "身分证号"));
+            ribbonField.Add(new RibbonFeature("Teacher.Field.身份证号", "身份证号"));
 
             ListPaneField telField = new ListPaneField("联络电话");
             telField.GetVariable += delegate(object sender, GetVariableEventArgs e)
@@ -179,7 +179,7 @@ namespace SchoolCore
                 async.RunWorkerAsync(cd);
             };
 
-            SearchTeacherRefId = SearchConditionMenu["身分证号"];
+            SearchTeacherRefId = SearchConditionMenu["身份证号"];
             SearchTeacherRefId.AutoCheckOnClick = true;
             SearchTeacherRefId.AutoCollapseOnClick = false;
             SearchTeacherRefId.Checked = cd.GetBoolean("SearchTeacherRefId", true);

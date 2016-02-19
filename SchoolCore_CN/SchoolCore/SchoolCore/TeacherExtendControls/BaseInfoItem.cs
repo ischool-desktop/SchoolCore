@@ -141,7 +141,7 @@ namespace SchoolCore.TeacherExtendControls
 
             // Log
             prlp.SetBeforeSaveText("姓名", txtName.Text);
-            prlp.SetBeforeSaveText("身分证号", txtIDNumber.Text);
+            prlp.SetBeforeSaveText("身份证号", txtIDNumber.Text);
             prlp.SetBeforeSaveText("性别", cboGender.Text);
             prlp.SetBeforeSaveText("昵称", txtNickname.Text);
             prlp.SetBeforeSaveText("联络电话", txtPhone.Text);
@@ -170,7 +170,7 @@ namespace SchoolCore.TeacherExtendControls
                 if (!string.IsNullOrEmpty(TR.TALoginName))
                     _AllLogIDDic.Add(TR.TALoginName, TR.ID);
 
-                // 身分证号检查
+                // 身份证号检查
                 if (!string.IsNullOrWhiteSpace(TR.IDNumber))
                     if (!_AllIDNumberDict.ContainsKey(TR.IDNumber))
                         _AllIDNumberDict.Add(TR.IDNumber, TR.ID);
@@ -224,12 +224,12 @@ namespace SchoolCore.TeacherExtendControls
                 }
             }
 
-            // 检查身分证号是否重复
+            // 检查身份证号是否重复
             if (_AllIDNumberDict.ContainsKey(txtIDNumber.Text))
             {
                 if (_TeacherRec.ID != _AllIDNumberDict[txtIDNumber.Text])
                 {
-                    epIDNumber.SetError(txtIDNumber, "身分证号重复，请检查!");
+                    epIDNumber.SetError(txtIDNumber, "身份证号重复，请检查!");
                     return;
                 }
             }
@@ -251,7 +251,7 @@ namespace SchoolCore.TeacherExtendControls
 
             // Save Log
             prlp.SetAfterSaveText("姓名", txtName.Text);
-            prlp.SetAfterSaveText("身分证号", txtIDNumber.Text);
+            prlp.SetAfterSaveText("身份证号", txtIDNumber.Text);
             prlp.SetAfterSaveText("性别", cboGender.Text);
             prlp.SetAfterSaveText("昵称", txtNickname.Text);
             prlp.SetAfterSaveText("联络电话", txtPhone.Text);

@@ -159,7 +159,7 @@
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(60, 17);
             this.label81.TabIndex = 192;
-            this.label81.Text = "身分证号";
+            this.label81.Text = "身份证号";
             this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtEngName

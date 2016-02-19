@@ -103,7 +103,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 17);
             this.label3.TabIndex = 3;
-            this.label3.Text = "身分证号";
+            this.label3.Text = "身份证号";
             // 
             // txtName
             // 

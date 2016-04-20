@@ -490,7 +490,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "BaseInfoPalmerwormItem";
-            this.Size = new System.Drawing.Size(550, 205);
+            this.Size = new System.Drawing.Size(550, 200);
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contextMenuBar1)).EndInit();

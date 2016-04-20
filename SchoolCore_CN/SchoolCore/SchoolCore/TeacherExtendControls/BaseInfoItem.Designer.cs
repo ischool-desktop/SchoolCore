@@ -387,7 +387,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtNickname);
             this.Name = "BaseInfoItem";
-            this.Size = new System.Drawing.Size(550, 205);
+            this.Size = new System.Drawing.Size(550, 193);
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contextMenuBar1)).EndInit();
